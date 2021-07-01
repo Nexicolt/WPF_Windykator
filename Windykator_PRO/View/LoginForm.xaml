@@ -1,0 +1,59 @@
+﻿<Window x:Class="Windykator_PRO.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Windykator_PRO"
+        mc:Ignorable="d"
+        WindowStyle="None"  
+        AllowsTransparency="True"
+        Margin="0"
+        Padding="0"
+        Title="LoginForm" Height="300" Width="400">
+    
+    <Window.Resources>
+        <ResourceDictionary Source="/Dictionares/LoginFormDictionary.xaml"/>
+    </Window.Resources>
+
+    <Grid Background="#302d2d" MouseDown="Grid_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel  Style="{StaticResource TopStackPanel}">
+            <Button Content="x" Click="CloseWindow" Style="{StaticResource FunctionButtons}" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <Image Source="/Icons/small_logo.png" Width="50"/>
+                <TextBlock Text="ZALOGUJ SIĘ" TextAlignment="Center" Margin="0,20,0,0" Foreground="#aaaaaa" FontSize="18" FontWeight="Bold"/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="1" Width="220" Margin="0,20,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Login:" Style="{StaticResource InputTextBlock}"/>
+                    <TextBox Style="{StaticResource Input}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="Hasło:" Style="{StaticResource InputTextBlock}"/>
+                    <PasswordBox  Style="{StaticResource PasswordInput}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Zaloguj"  Click="VerifyLoginData" Style="{StaticResource Button}"/>
+            <Button Content="Anuluj"  Click="CloseWindow" Style="{StaticResource Button}"/>
+        </StackPanel>
+    </Grid>
+</Window>
+ 

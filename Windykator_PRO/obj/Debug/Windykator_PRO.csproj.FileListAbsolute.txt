@@ -1,0 +1,69 @@
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.exe.config
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.exe
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.pdb
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csprojAssemblyReference.cache
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\DarkModeControlsTemplates.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\TopBarDictionary.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\MainWindow.g.cs
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\App.g.cs
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.cache
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.lref
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\MainWindow.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.g.resources
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.Properties.Resources.resources
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.GenerateResource.cache
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.CoreCompileInputs.cache
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.exe
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.pdb
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\LeftMenuDictionary.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\ClientsDictionary.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Clients.g.cs
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Clients.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\CenterOfAppDictionary.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\IssuesDictionary.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Issues.g.cs
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Issues.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\DebtorsDictionary.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Debtors.g.cs
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Debtors.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\LoginFormDictionary.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\LoginForm.g.cs
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\LoginForm.baml
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\helpWindow.g.cs
+C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\helpWindow.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.exe.config
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.exe
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.pdb
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.AssemblyReference.cache
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\CenterOfAppDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\DebtorsDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\ClientsDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\DarkModeControlsTemplates.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\IssuesDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\LeftMenuDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\LoginFormDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\TopBarDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\App.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.cache
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.lref
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.g.resources
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.Properties.Resources.resources
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.GenerateResource.cache
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.CoreCompileInputs.cache
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.exe
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.pdb
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\LoginForm.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\MainWindow.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\LoginForm.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\MainWindow.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\ClientsView.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\ClientsView.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\MainWindowResources.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\DebtorsView.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\IssuesView.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\DebtorsView.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\IssuesView.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\AddNewClientDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewClientView.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewClientView.baml

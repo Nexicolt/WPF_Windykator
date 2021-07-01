@@ -1,0 +1,143 @@
+﻿<Window
+    x:Class="Windykator_PRO.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Windykator_PRO"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    MinWidth="950"
+    MinHeight="780"
+    AllowsTransparency="True"
+    Background="#333333"
+    BorderThickness="6"
+    ResizeMode="CanResizeWithGrip"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionares/TopBarDictionary.xaml" />
+                <ResourceDictionary Source="/Dictionares/LeftMenuDictionary.xaml" />
+                <ResourceDictionary Source="/Dictionares/MainWindowResources.xaml" />
+                <ResourceDictionary Source="/Dictionares/CenterOfAppDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!--  Główny kontener  -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" MaxHeight="46" />
+            <RowDefinition Height="108*" />
+            <RowDefinition Height="271*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <!--  Górny pasek  -->
+        <Grid
+            Grid.Row="0"
+            MouseLeftButtonDown="DragWindow"
+            Style="{StaticResource TopBarGrid}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--  Menu  -->
+            <Menu Style="{StaticResource TopMenu}">
+                <MenuItem Header="Sprawy" Style="{StaticResource TopMenuItem}">
+                    <MenuItem Header="Dodaj nową sprawę" Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem Header="Importuj sprawy" Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem Header="Exportuj sprawy" Style="{StaticResource DarkModeMenuItem}" />
+                </MenuItem>
+                <MenuItem Header="Klienci" Style="{StaticResource TopMenuItem}">
+                    <MenuItem
+                        Command="{Binding CreateClientCommand}"
+                        Header="Dodaj nowego klienta"
+                        Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem Header="Importuj klientów" Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem Header="Exportuj klientów" Style="{StaticResource DarkModeMenuItem}" />
+                </MenuItem>
+                <MenuItem Header="Dłużnicy" Style="{StaticResource TopMenuItem}">
+                    <MenuItem Header="Dodaj nowego dłużnika" Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem Header="Importuj dłużników" Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem Header="Exportuj dłużników" Style="{StaticResource DarkModeMenuItem}" />
+                </MenuItem>
+                <MenuItem Header="Pomoc" Style="{StaticResource TopMenuItem}" />
+            </Menu>
+
+            <!--  Przyciski w prawym, górnym rogu  -->
+            <StackPanel Grid.Column="1" Style="{StaticResource TopMenuButtonsPanel}">
+                <Button
+                    Click="MinimizeApplication"
+                    Content="-"
+                    Style="{StaticResource TopMenuFunctionButton}" />
+                <Button
+                    Click="MaximizeApplication"
+                    Content="□"
+                    Style="{StaticResource TopMenuFunctionButton}" />
+                <Button
+                    Click="CloseApplication"
+                    Content="x"
+                    Style="{StaticResource TopMenuFunctionButton}" />
+            </StackPanel>
+        </Grid>
+
+        <!--  Środek aplikacji  -->
+        <Grid
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Margin="0,0,0,0.2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <!--  Boczne menu  -->
+            <Grid
+                Name="LeftMenu"
+                Grid.Column="0"
+                Style="{StaticResource LeftMenuGrid}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel VerticalAlignment="Center">
+                    <Image
+                        x:Name="leftMenuLogo"
+                        Source="/Icons/small_logo.png"
+                        Style="{StaticResource LeftMenuLogo}" />
+                </StackPanel>
+
+                <!--  Elementy menu  -->
+                <HeaderedContentControl
+                    Grid.Row="1"
+                    Background="Aqua"
+                    Content="{Binding Path=Commands}"
+                    ContentTemplate="{StaticResource CommandsTemplate}" />
+
+                <!--  Przycisk od chowania menu  -->
+                <Button
+                    Grid.Row="2"
+                    Click="Hide_Show_Menu"
+                    Style="{StaticResource LeftMenuHide_Show_Button}">
+                    <Image
+                        x:Name="Hide_Show_Menu_button_image"
+                        Source="/Icons/Menu/hide_menu.png"
+                        Style="{StaticResource LeftMenuHide_Show_Button_ContentImage}" />
+                </Button>
+            </Grid>
+
+            <!--  Centrum aplikacji (zakładki)  -->
+            <HeaderedContentControl
+                Grid.Column="1"
+                Content="{Binding Path=Workspaces}"
+                ContentTemplate="{StaticResource WorkspacesTemplate}" />
+
+        </Grid>
+    </Grid>
+</Window>
