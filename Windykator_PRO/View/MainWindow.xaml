@@ -47,7 +47,10 @@
             <!--  Menu  -->
             <Menu Style="{StaticResource TopMenu}">
                 <MenuItem Header="Sprawy" Style="{StaticResource TopMenuItem}">
-                    <MenuItem Header="Dodaj nową sprawę" Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem
+                        Command="{Binding CreateIssueCommand}"
+                        Header="Dodaj nową sprawę"
+                        Style="{StaticResource DarkModeMenuItem}" />
                     <MenuItem Header="Importuj sprawy" Style="{StaticResource DarkModeMenuItem}" />
                     <MenuItem Header="Exportuj sprawy" Style="{StaticResource DarkModeMenuItem}" />
                 </MenuItem>
@@ -56,11 +59,17 @@
                         Command="{Binding CreateClientCommand}"
                         Header="Dodaj nowego klienta"
                         Style="{StaticResource DarkModeMenuItem}" />
-                    <MenuItem Header="Importuj klientów" Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem
+                        Command="{Binding ImportClients}"
+                        Header="Importuj klientów"
+                        Style="{StaticResource DarkModeMenuItem}" />
                     <MenuItem Header="Exportuj klientów" Style="{StaticResource DarkModeMenuItem}" />
                 </MenuItem>
                 <MenuItem Header="Dłużnicy" Style="{StaticResource TopMenuItem}">
-                    <MenuItem Header="Dodaj nowego dłużnika" Style="{StaticResource DarkModeMenuItem}" />
+                    <MenuItem
+                        Command="{Binding CreateDebtorCommand}"
+                        Header="Dodaj nowego dłużnika"
+                        Style="{StaticResource DarkModeMenuItem}" />
                     <MenuItem Header="Importuj dłużników" Style="{StaticResource DarkModeMenuItem}" />
                     <MenuItem Header="Exportuj dłużników" Style="{StaticResource DarkModeMenuItem}" />
                 </MenuItem>

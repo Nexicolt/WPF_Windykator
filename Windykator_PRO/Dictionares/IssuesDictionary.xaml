@@ -11,6 +11,7 @@
 
     <Style x:Key="ToolbarButton" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="10,0,10,0" />
+        <Setter Property="Margin" Value="10,0,10,0" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Cursor" Value="Hand" />

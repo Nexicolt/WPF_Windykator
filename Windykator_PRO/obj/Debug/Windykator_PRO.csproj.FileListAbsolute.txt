@@ -67,3 +67,12 @@ C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\I
 C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\AddNewClientDictionary.baml
 C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewClientView.g.cs
 C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewClientView.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\AddNewDebtorDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewDebtorView.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewDebtorView.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\AddNewIssueDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewIssueView.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewIssueView.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\ImportClientsDictionary.baml
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\ImportClientsView.g.cs
+C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\ImportClientsView.baml

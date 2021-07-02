@@ -1,0 +1,327 @@
+﻿<UserControl
+    x:Class="Windykator_PRO.View.AddNewIssueView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Windykator_PRO.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Dictionares/AddNewIssueDictionary.xaml" />
+    </UserControl.Resources>
+
+    <Grid Margin="20,10,20,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <TextBlock Style="{StaticResource HeaderTextBlock}" Text="Klient" />
+            <TextBlock
+                Grid.Column="2"
+                Style="{StaticResource HeaderTextBlock}"
+                Text="Dłużnik" />
+            <!--  Lewa kolumna  -->
+            <Grid Grid.Row="1" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Nazwa" />
+                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+
+                <TextBlock
+                    Grid.Row="2"
+                    Style="{StaticResource FiltersTextBlock}"
+                    Text="Lokalizacja:" />
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Style="{StaticResource TextBoxDark}" />
+
+                <TextBlock
+                    Grid.Row="4"
+                    Style="{StaticResource FiltersTextBlock}"
+                    Text="Należność:" />
+                <TextBox
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Style="{StaticResource TextBoxDark}" />
+
+                <Grid Grid.Row="6" Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="15" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                        Grid.Column="0"
+                        Style="{StaticResource FiltersTextBlock}"
+                        Text="Waluta:" />
+                    <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+
+                    <TextBlock
+                        Grid.Column="4"
+                        Style="{StaticResource FiltersTextBlock}"
+                        Text="Klient zagraniczny:" />
+                    <TextBox Grid.Column="6" Style="{StaticResource TextBoxDark}" />
+
+                </Grid>
+
+                <Button
+                    Grid.Row="8"
+                    Grid.ColumnSpan="4"
+                    Content="Wczytaj klienta"
+                    Style="{StaticResource BottomButton}" />
+
+
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Nazwa" />
+                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+
+                <TextBlock
+                    Grid.Row="2"
+                    Style="{StaticResource FiltersTextBlock}"
+                    Text="Lokalizacja:" />
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Style="{StaticResource TextBoxDark}" />
+
+                <TextBlock
+                    Grid.Row="4"
+                    Style="{StaticResource FiltersTextBlock}"
+                    Text="Należność:" />
+                <TextBox
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Style="{StaticResource TextBoxDark}" />
+
+                <Grid Grid.Row="6" Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="120" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                        Grid.Column="0"
+                        Style="{StaticResource FiltersTextBlock}"
+                        Text="Ilośc spraw:" />
+                    <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+
+
+                </Grid>
+
+                <Button
+                    Grid.Row="8"
+                    Grid.ColumnSpan="4"
+                    Content="Wczytaj dłużnika"
+                    Style="{StaticResource BottomButton}" />
+
+
+            </Grid>
+
+        </Grid>
+
+        <Separator Grid.Row="1" />
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource HeaderTextBlock}" Text="Dołączanie dokumentów" />
+
+            <Grid Grid.Row="1" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="45" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="160" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Numer dokumentu:" />
+                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+
+                <TextBlock
+                    Grid.Column="4"
+                    Style="{StaticResource FiltersTextBlock}"
+                    Text="Typ dokumentu:" />
+                <ComboBox Grid.Column="6" Style="{StaticResource ComboBoxDark}">
+                    <ComboBoxItem Content="Faktura VAT" Style="{StaticResource ComboBoxItemDark}" />
+                    <ComboBoxItem Content="Pismo sądowe" Style="{StaticResource ComboBoxItemDark}" />
+                </ComboBox>
+
+                <Grid Grid.Row="2" Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Kwota od:" />
+                    <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+
+                    <TextBlock
+                        Grid.Column="4"
+                        Style="{StaticResource FiltersTextBlock}"
+                        Text="Kwota do:" />
+                    <TextBox Grid.Column="6" Style="{StaticResource TextBoxDark}" />
+
+
+                </Grid>
+
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="4"
+                    Style="{StaticResource FiltersTextBlock}"
+                    Text="Data wystawienia:" />
+                <DatePicker
+                    Grid.Row="2"
+                    Grid.Column="6"
+                    Style="{StaticResource DatePickerDark}" />
+
+
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Style="{StaticResource FiltersTextBlock}"
+                    Text="Pokaż dołączone:" />
+
+                <CheckBox
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Style="{StaticResource FiltersCheckBox}" />
+
+                <Button
+                    Grid.Row="4"
+                    Grid.Column="6"
+                    Content="Filtruj"
+                    Style="{StaticResource BottomButton}" />
+
+                <DataGrid
+                    Name="DaocumentDataGrid"
+                    Grid.Row="6"
+                    Grid.ColumnSpan="7"
+                    Height="150"
+                    ColumnWidth="90"
+                    RowHeaderWidth="0"
+                    Style="{StaticResource DataGirdDark}">
+
+
+
+                    <!--  Zmiana koloru nazw kolumn  -->
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#515151" />
+                            <Setter Property="Foreground" Value="#aaaaaa" />
+                            <Setter Property="Padding" Value="10,5,10,5" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=DataWpisu}" Header="Data wpisu" />
+                        <DataGridTextColumn Binding="{Binding Path=NrSprawy}" Header="Nr. sprawy" />
+                        <DataGridTextColumn Binding="{Binding Path=Dluznik}" Header="Dłużnik" />
+                        <DataGridTextColumn Binding="{Binding Path=Wierzyciel}" Header="Wierzyciel" />
+                        <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status" />
+                        <DataGridTextColumn Binding="{Binding Path=Kwota}" Header="Kwota" />
+                    </DataGrid.Columns>
+
+
+                </DataGrid>
+
+
+                <Button
+                    Grid.Row="8"
+                    Grid.Column="6"
+                    Content="Dodaj sprawę"
+                    Style="{StaticResource BottomButton}" />
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</UserControl>

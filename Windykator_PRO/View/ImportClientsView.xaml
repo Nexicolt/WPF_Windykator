@@ -1,0 +1,198 @@
+﻿<UserControl
+    x:Class="Windykator_PRO.View.ImportClientsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Windykator_PRO.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Dictionares/ImportClientsDictionary.xaml" />
+    </UserControl.Resources>
+
+
+    <Grid Margin="20,10,20,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="260" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Scieżka do pliku" />
+        <TextBox
+            Grid.Column="2"
+            Grid.ColumnSpan="5"
+            Style="{StaticResource TextBoxDark}" />
+        <Button
+            Grid.Column="8"
+            Content="Otwórz"
+            Style="{StaticResource FindFileButton}" />
+
+        <TextBlock
+            Grid.Row="2"
+            Style="{StaticResource FiltersTextBlock}"
+            Text="Format danych:" />
+
+        <ComboBox
+            Grid.Row="2"
+            Grid.Column="2"
+            Style="{StaticResource ComboBoxDark}">
+            <ComboBoxItem Content="JSON" Style="{StaticResource ComboBoxItemDark}" />
+            <ComboBoxItem Content="XML" Style="{StaticResource ComboBoxItemDark}" />
+            <ComboBoxItem Content="CSV" Style="{StaticResource ComboBoxItemDark}" />
+
+
+        </ComboBox>
+        <TextBlock
+            Grid.Row="4"
+            Style="{StaticResource FiltersTextBlock}"
+            Text="Znak rozdzielający:" />
+
+        <Grid Grid.Row="4" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+
+            <RadioButton Content="; (średnik)" Style="{StaticResource FiltersRadioButton}" />
+            <RadioButton
+                Grid.Column="2"
+                Content=". (kropka)"
+                Style="{StaticResource FiltersRadioButton}" />
+            <RadioButton
+                Grid.Column="4"
+                Content=", (przecinek)"
+                Style="{StaticResource FiltersRadioButton}" />
+
+        </Grid>
+
+        <TextBlock
+            Grid.Row="6"
+            Style="{StaticResource FiltersTextBlock}"
+            Text="Ogranicznik tekstu:" />
+
+        <Grid Grid.Row="6" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+
+            <RadioButton Content="' (apostrof)" Style="{StaticResource FiltersRadioButton}" />
+            <RadioButton
+                Grid.Column="2"
+                Content="'' (cudzysłów)"
+                Style="{StaticResource FiltersRadioButton}" />
+            <RadioButton
+                Grid.Column="4"
+                Content=" (brak)"
+                Style="{StaticResource FiltersRadioButton}" />
+
+        </Grid>
+
+        <TextBlock
+            Grid.Row="8"
+            Style="{StaticResource FiltersTextBlock}"
+            Text="Ignoruj błędy:" />
+
+        <Grid Grid.Row="8" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+
+            <RadioButton Content="Tak" Style="{StaticResource FiltersRadioButton}" />
+            <RadioButton
+                Grid.Column="2"
+                Content="Nie"
+                Style="{StaticResource FiltersRadioButton}" />
+
+
+        </Grid>
+
+
+        <DataGrid
+            Name="ClientsDataGrid"
+            Grid.Row="10"
+            Grid.ColumnSpan="9"
+            Height="250"
+            ColumnWidth="*"
+            RowHeaderWidth="0"
+            Style="{StaticResource DataGirdDark}">
+
+            <!--  Zmiana koloru nazw kolumn  -->
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#515151" />
+                    <Setter Property="Foreground" Value="#aaaaaa" />
+                    <Setter Property="Padding" Value="10,5,10,5" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="40" Header="Lp." />
+                <DataGridTextColumn Width="200" Header="Nazwa" />
+                <DataGridTextColumn Width="110" Header="Miasto" />
+                <DataGridTextColumn Width="110" Header="Ulica" />
+                <DataGridTextColumn Width="110" Header="Należność" />
+                <DataGridTextColumn Width="110" Header="Waluta" />
+                <DataGridTextColumn Width="110" Header="Czy zagraniczny" />
+
+            </DataGrid.Columns>
+
+
+        </DataGrid>
+
+        <Button
+            Grid.Row="12"
+            Grid.Column="2"
+            Content="Weryfikuj plik"
+            Style="{StaticResource ImportClinetsButton}" />
+
+
+        <Button
+            Grid.Row="12"
+            Grid.Column="3"
+            Grid.ColumnSpan="2"
+            Content="Importuj klientów"
+            Style="{StaticResource ImportClinetsButton}" />
+
+
+
+
+
+    </Grid>
+</UserControl>

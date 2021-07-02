@@ -41,7 +41,41 @@ namespace Windykator_PRO.ViewModel
                 return getCommand(_CreateClientCommand, new AddNewClientViewModel());
             }
         }
-   
+        private BaseCommand _CreateDebtorCommand;
+
+        //to jest komenda, która zostanie podpieta pod przycisk w pasku narzędzi i ta komenda wywyoła funkcje Create
+        public ICommand CreateDebtorCommand
+        {
+            get
+            {
+                return getCommand(_CreateDebtorCommand, new AddNewDebtorViewModel());
+            }
+        }
+
+        private BaseCommand _CreateIssueCommand;
+
+        //to jest komenda, która zostanie podpieta pod przycisk w pasku narzędzi i ta komenda wywyoła funkcje Create
+        public ICommand CreateIssueCommand
+        {
+            get
+            {
+                return getCommand(_CreateIssueCommand, new AddNewIssueViewModel());
+            }
+        }
+
+        private BaseCommand _ImportClients;
+
+        //to jest komenda, która zostanie podpieta pod przycisk w pasku narzędzi i ta komenda wywyoła funkcje Create
+        public ICommand ImportClients
+        {
+            get
+            {
+                return getCommand(_ImportClients, new ImportClientsViewModel());
+            }
+        }
+
+
+
         #endregion
 
         #region Commands

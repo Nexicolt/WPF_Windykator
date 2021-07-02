@@ -19,6 +19,18 @@
         <vw:AddNewClientView />
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:AddNewDebtorViewModel}">
+        <vw:AddNewDebtorView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddNewIssueViewModel}">
+        <vw:AddNewIssueView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ImportClientsViewModel}">
+        <vw:ImportClientsView />
+    </DataTemplate>
+
 
 
 </ResourceDictionary>
