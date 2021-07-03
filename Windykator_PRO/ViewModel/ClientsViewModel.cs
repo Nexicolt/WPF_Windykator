@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Windykator_PRO.ViewModel
 {
@@ -14,5 +15,22 @@ namespace Windykator_PRO.ViewModel
             base.DisplayName = "Klienci";
         }
         #endregion
+  
+        public ICommand CreateClientCommand
+        {
+            get
+            {
+                return MainWindowViewModel.MainWindowHandler.CreateClientCommand;
+            }
+        }
+
+        public ICommand Import
+        {
+            get
+            {
+                return MainWindowViewModel.MainWindowHandler.Import;
+            }
+        }
+
     }
 }

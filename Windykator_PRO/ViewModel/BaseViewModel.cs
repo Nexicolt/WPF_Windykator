@@ -15,16 +15,14 @@ namespace Windykator_PRO.ViewModel
     public class BaseViewModel : INotifyPropertyChanged
     {
         #region DisplayName
+        //Nazwa zakładki
         public virtual string DisplayName { get; protected set; }
+        //SRC do ikony
         public virtual string iconPath { get; protected set; }
+        //SRC do niebieskiej ikony (aktywowanej gdy "OnMouseOver")
         public virtual string iconPathClicked { get; protected set; }
         #endregion
         #region WindowPropertes
-
-        public void ShowMessageBox(string message)
-        {
-            MessageBox.Show(message, "", MessageBoxButton.OK, MessageBoxImage.Error);
-        }
 
         public ICommand Close
         {

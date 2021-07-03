@@ -27,10 +27,12 @@
         <vw:AddNewIssueView />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:ImportClientsViewModel}">
-        <vw:ImportClientsView />
+    <DataTemplate DataType="{x:Type vm:ImportOptionViewModel}">
+        <vw:ImportOptionView />
     </DataTemplate>
 
-
+    <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+        <vw:SettingsView />
+    </DataTemplate>
 
 </ResourceDictionary>

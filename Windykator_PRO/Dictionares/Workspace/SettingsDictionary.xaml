@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Słownik z stylami wykorzystywanymi w wielu zakładkach (uniknięcie powtarzania kodu)  -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="WorkspaceDefaultStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="SettingsHeaderTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#aaaaaa" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="14" />
+        <!--<Setter Property="" Value=""/>-->
+    </Style>
+
+    <Style x:Key="SettingsHeaderSeparator" TargetType="Separator">
+        <Setter Property="Width" Value="200" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+</ResourceDictionary>

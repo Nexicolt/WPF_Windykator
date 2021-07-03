@@ -1,13 +1,9 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
 using Windykator_PRO.Helpers;
@@ -16,24 +12,42 @@ namespace Windykator_PRO.ViewModel
 {
     public class MainWindowViewModel : BaseViewModel
     {
+        public static MainWindowViewModel MainWindowHandler = null;
+        public MainWindowViewModel()
+        {
+            MainWindowViewModel.MainWindowHandler = this;
+        }
+
         #region Fields
-        //po...
-        //
-        private ReadOnlyCollection<CommandViewModel> _Commands;//każdy link po lewej stronie jest CommandVieModelem
-        //zbior zakł
+        //Kolekcja z komendami (komenda = wowołanie nowej zakładki)
+        private ReadOnlyCollection<CommandViewModel> _Commands;
+        //Kolekcja z otwartymi zakładkami
         private ObservableCollection<WorkspaceViewModel> _Workspaces;
         #endregion
 
         #region ToolBarComands
+        /**
+         * Główna funkcja, wykoszystywana w spersonalizowanych komendach. Sprawdza czy przekazany ViewModel jest NULL'em i na tej podstawie
+         * zwraca jego nową instancję, lub już istniejącą
+         */
         private BaseCommand getCommand(BaseCommand _command, WorkspaceViewModel workspace)
         {
             if(_command == null)
                 _command = new BaseCommand(()=> Create(workspace));
             return _command;
         }
+
+        //Zmienna, reprezntującą komendę. Wykorzystywaną w 'GetCommand" do porównania i zwrócenia nowej instancji, czy instiejącej
         private BaseCommand _CreateClientCommand;
-        
-        //to jest komenda, która zostanie podpieta pod przycisk w pasku narzędzi i ta komenda wywyoła funkcje Create
+        private BaseCommand _CreateDebtorCommand;
+        private BaseCommand _CreateIssueCommand;
+        private BaseCommand _Import;
+
+
+        /**
+         * Komenda wywoływana przy kliknięciu na określony link (W lewym menu lub w górnym. Wywoływana poprzez "binding"
+         * (Dotyczy każdej funkcji w przestrzeni 'ToolBarComands')
+         */
         public ICommand CreateClientCommand
         {
             get
@@ -41,9 +55,6 @@ namespace Windykator_PRO.ViewModel
                 return getCommand(_CreateClientCommand, new AddNewClientViewModel());
             }
         }
-        private BaseCommand _CreateDebtorCommand;
-
-        //to jest komenda, która zostanie podpieta pod przycisk w pasku narzędzi i ta komenda wywyoła funkcje Create
         public ICommand CreateDebtorCommand
         {
             get
@@ -51,10 +62,6 @@ namespace Windykator_PRO.ViewModel
                 return getCommand(_CreateDebtorCommand, new AddNewDebtorViewModel());
             }
         }
-
-        private BaseCommand _CreateIssueCommand;
-
-        //to jest komenda, która zostanie podpieta pod przycisk w pasku narzędzi i ta komenda wywyoła funkcje Create
         public ICommand CreateIssueCommand
         {
             get
@@ -62,23 +69,18 @@ namespace Windykator_PRO.ViewModel
                 return getCommand(_CreateIssueCommand, new AddNewIssueViewModel());
             }
         }
-
-        private BaseCommand _ImportClients;
-
-        //to jest komenda, która zostanie podpieta pod przycisk w pasku narzędzi i ta komenda wywyoła funkcje Create
-        public ICommand ImportClients
+        public ICommand Import
         {
             get
             {
-                return getCommand(_ImportClients, new ImportClientsViewModel());
+                return getCommand(_Import, new ImportOptionViewModel());
             }
         }
-
-
 
         #endregion
 
         #region Commands
+        //Kolekcja, zawierająca wszystkie funkcje
         public ReadOnlyCollection<CommandViewModel> Commands
         {
             get
@@ -94,30 +96,42 @@ namespace Windykator_PRO.ViewModel
                 return _Commands;
             }
         }
+
+        /**
+         * Funkcja generuje linki w menu, po lewej stronie
+         */
         private List<CommandViewModel> CreateCommands()
         {
-            //w tej metodzie decydujemy jakie linki będą po lewej stronie
+            //Zwracana lista z linkami, którę będą w lewym menu
             return new List<CommandViewModel>
             {
-                 new CommandViewModel("Sprawy",new BaseCommand(()=>this.ShowIssues())), //
-                 new CommandViewModel("Klienci",new BaseCommand(()=>this.ShowClients())), //
-                 new CommandViewModel("Dłużnicy",new BaseCommand(()=>this.ShowDebtors())), //
+                 new CommandViewModel("Sprawy",new BaseCommand(()=>this.ShowIssues())), 
+                 new CommandViewModel("Klienci",new BaseCommand(()=>this.ShowClients())), 
+                 new CommandViewModel("Dłużnicy",new BaseCommand(()=>this.ShowDebtors())), 
+                 new CommandViewModel("Ustawienia",new BaseCommand(()=>this.ShowSettings()))
             };
         }
         #endregion
         #region Workspaces
+
+        //Kolekcja przechowuje wszystkie otwarte karty
         public ObservableCollection<WorkspaceViewModel> Workspaces
         {
             get
             {
-                if(_Workspaces==null)
+                if (_Workspaces == null)
                 {
                     _Workspaces = new ObservableCollection<WorkspaceViewModel>();
-                    _Workspaces.CollectionChanged+= this.OnWorkspacesChanged;
+                    //DOpisanie wydarzenie "OnChange", wywoływane przy dodaniu lub usunięciu zakładki
+                    _Workspaces.CollectionChanged += this.OnWorkspacesChanged;
                 }
                 return _Workspaces;
             }
         }
+        /**
+         * Funkcja wywoływana przy dodaniu lub usunięciu zakładki
+         * Odświeża kolekcję i na nowo prezentuje ją w formie widoku dla użytkownika
+         */
         private void OnWorkspacesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null && e.NewItems.Count != 0)
@@ -128,6 +142,10 @@ namespace Windykator_PRO.ViewModel
                 foreach (WorkspaceViewModel workspace in e.OldItems)
                     workspace.RequestClose -= this.OnWorkspaceRequestClose;
         }
+
+        /**
+         * Metoda wywoływana przy zamknięciu zakładki
+         */
         private void OnWorkspaceRequestClose(object sender, EventArgs e)
         {
             WorkspaceViewModel workspace = sender as WorkspaceViewModel;
@@ -136,65 +154,78 @@ namespace Windykator_PRO.ViewModel
         }
         #endregion
         #region PrivateHelpers
+        /**
+         * Metoda dodaje nową zakładke do kolekcji
+         */
         private void Create(WorkspaceViewModel workspace) 
         { 
             this.Workspaces.Add(workspace); 
+            //Ustaw nową zakłądkę na aktywną i odśwież "workspace"
             this.SetActiveWorkspace(workspace); 
         }
 
         private void ShowIssues()
         {
-            //w kolekc...
-            IssuesViewModel workspace =
-                this.Workspaces.FirstOrDefault(vm => vm is IssuesViewModel) as IssuesViewModel;
-            //jeżeli takiej zakładki nie ma
+            //Sprawdź, czy kolekcja zawiera już rządaną zakładkę
+            IssuesViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is IssuesViewModel) as IssuesViewModel;
+            //Utwórz nową i ją dodaj, jeśli nie
             if (workspace == null)
             {
-                //to tworzę nową zakładke
                 workspace = new IssuesViewModel();
-                //i dodaje do kolekcji wyswietlanych zakładek
                 this.Workspaces.Add(workspace);
             }
-            //uaktywniam zakładkę, którą znalazłem lub dodałem
+            //Ustaw na aktywną, jeśli tak
             this.SetActiveWorkspace(workspace);
         }
 
         private void ShowDebtors()
         {
-            //w kolekc...
-            DebtorsViewModel workspace =
-                this.Workspaces.FirstOrDefault(vm => vm is DebtorsViewModel) as DebtorsViewModel;
-            //jeżeli takiej zakładki nie ma
+            //Sprawdź, czy kolekcja zawiera już rządaną zakładkę
+            DebtorsViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is DebtorsViewModel) as DebtorsViewModel;
+            //Utwórz nową i ją dodaj, jeśli nie
             if (workspace == null)
             {
-                //to tworzę nową zakładke
                 workspace = new DebtorsViewModel();
-                //i dodaje do kolekcji wyswietlanych zakładek
                 this.Workspaces.Add(workspace);
             }
-            //uaktywniam zakładkę, którą znalazłem lub dodałem
+            //Ustaw na aktywną, jeśli tak
             this.SetActiveWorkspace(workspace);
         }
 
         private void ShowClients()
         {
-            //w kolekc...
-            ClientsViewModel workspace =
-                this.Workspaces.FirstOrDefault(vm => vm is ClientsViewModel) as ClientsViewModel;
-            //jeżeli takiej zakładki nie ma
-            if(workspace==null)
+            //Sprawdź, czy kolekcja zawiera już rządaną zakładkę
+            ClientsViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is ClientsViewModel) as ClientsViewModel;
+            //Utwórz nową i ją dodaj, jeśli nie
+            if (workspace == null)
             {
-                //to tworzę nową zakładke
                 workspace = new ClientsViewModel();
-                //i dodaje do kolekcji wyswietlanych zakładek
                 this.Workspaces.Add(workspace);
             }
-            //uaktywniam zakładkę, którą znalazłem lub dodałem
+            //Ustaw na aktywną, jeśli tak
             this.SetActiveWorkspace(workspace);
         }
+
+        private void ShowSettings()
+        {
+            //Sprawdź, czy kolekcja zawiera już rządaną zakładkę
+            SettingsViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is SettingsViewModel) as SettingsViewModel;
+            //Utwórz nową i ją dodaj, jeśli nie
+            if (workspace == null)
+            {
+                workspace = new SettingsViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            //Ustaw na aktywną, jeśli tak
+            this.SetActiveWorkspace(workspace);
+        }
+
+        /**
+         * Metoda ustawia "workspace", na ten przekazany w parametrze (odświeża widok)
+         */
         private void SetActiveWorkspace(WorkspaceViewModel workspace)
         {
-            Debug.Assert(this.Workspaces.Contains(workspace));
+            //Debug.Assert(this.Workspaces.Contains(workspace));
 
             ICollectionView collectionView = CollectionViewSource.GetDefaultView(this.Workspaces);
             if (collectionView != null)

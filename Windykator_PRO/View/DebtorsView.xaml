@@ -5,14 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Windykator_PRO.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
     mc:Ignorable="d">
     <UserControl.Resources>
-        <ResourceDictionary Source="/Dictionares/DebtorsDictionary.xaml" />
+        <ResourceDictionary Source="/Dictionares/Workspace/DebtorsDictionary.xaml" />
     </UserControl.Resources>
 
-    <Grid Height="Auto" Margin="20,10,20,0">
+    <Grid Style="{StaticResource Tab_MainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="2*" />
@@ -21,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <ToolBar Grid.Row="0" Style="{StaticResource ToolbarStyle}">
-            <Button Style="{StaticResource ToolbarButton}">
+            <Button Command="{Binding CreateDebtorCommand}" Style="{StaticResource ToolbarButton}">
                 <StackPanel>
                     <Image Source="/Icons/Debtors/add_debtor.png" Style="{StaticResource ToolbarButtonImage}" />
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Dodaj dłużnika" />
@@ -40,7 +38,7 @@
                 </StackPanel>
             </Button>
             <Separator Background="Black" />
-            <Button Style="{StaticResource ToolbarButton}">
+            <Button Command="{Binding Import}" Style="{StaticResource ToolbarButton}">
                 <StackPanel>
                     <Image Source="/Icons/Debtors/import_debtor.png" Style="{StaticResource ToolbarButtonImage}" />
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Importuj" />
@@ -84,7 +82,7 @@
                     <RowDefinition Height="25" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Nazwa:" />
+                <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa:" />
                 <TextBox
                     Grid.Column="2"
                     Grid.ColumnSpan="5"
@@ -92,7 +90,7 @@
 
                 <TextBlock
                     Grid.Row="2"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Miasto:" />
                 <TextBox
                     Grid.Row="2"
@@ -102,7 +100,7 @@
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="4"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Ulica:" />
                 <TextBox
                     Grid.Row="2"
@@ -119,7 +117,7 @@
                         Grid.Column="0"
                         Margin="0,0,0,9.2"
                         VerticalAlignment="Bottom"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Typ klienta:" />
 
                     <Grid Grid.Row="8" Grid.Column="2">
@@ -128,11 +126,11 @@
                             <ColumnDefinition Width="20" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <RadioButton Content="Osoba fizyczna" Style="{StaticResource FiltersRadioButton}" />
+                        <RadioButton Content="Osoba fizyczna" Style="{StaticResource StandardRadioButton}" />
                         <RadioButton
                             Grid.Column="2"
                             Content="Firma"
-                            Style="{StaticResource FiltersRadioButton}" />
+                            Style="{StaticResource StandardRadioButton}" />
                     </Grid>
 
                 </Grid>
@@ -147,7 +145,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock
                         Grid.Column="0"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Postępowanie sądowe:" />
                     <Grid Grid.Row="2" Grid.Column="2">
                         <Grid.ColumnDefinitions>
@@ -156,11 +154,11 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <RadioButton Content="Tak" Style="{StaticResource FiltersRadioButton}" />
+                        <RadioButton Content="Tak" Style="{StaticResource StandardRadioButton}" />
                         <RadioButton
                             Grid.Column="2"
                             Content="Nie"
-                            Style="{StaticResource FiltersRadioButton}" />
+                            Style="{StaticResource StandardRadioButton}" />
 
                     </Grid>
                 </Grid>
@@ -179,7 +177,7 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Zadłużenie od:" />
                     <TextBox
                         Grid.Row="0"
@@ -189,7 +187,7 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="4"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Zadłużenie do:" />
                     <TextBox
                         Grid.Row="0"
@@ -214,7 +212,7 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Waluta:" />
                     <TextBox
                         Grid.Row="0"
@@ -287,7 +285,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Style="{StaticResource BottomButton}">
+                    <Button Style="{StaticResource StandardButton}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Szczegóły" />
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="dłużnika" />

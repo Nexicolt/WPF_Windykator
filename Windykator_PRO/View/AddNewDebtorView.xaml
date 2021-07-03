@@ -9,10 +9,10 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="/Dictionares/AddNewDebtorDictionary.xaml" />
+        <ResourceDictionary Source="/Dictionares/Workspace/AddNewDebtorDictionary.xaml" />
     </UserControl.Resources>
 
-    <Grid Margin="20,10,20,0">
+    <Grid Style="{StaticResource Tab_MainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="30" />
@@ -42,7 +42,7 @@
                 <RowDefinition Height="25" />
             </Grid.RowDefinitions>
 
-            <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Nazwa: " />
+            <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa: " />
 
             <TextBox
                 Grid.Column="2"
@@ -52,7 +52,7 @@
 
             <TextBlock
                 Grid.Row="2"
-                Style="{StaticResource FiltersTextBlock}"
+                Style="{StaticResource StandardTextBlock}"
                 Text="Miasto:" />
             <TextBox
                 Grid.Row="2"
@@ -62,7 +62,7 @@
             <TextBlock
                 Grid.Row="2"
                 Grid.Column="4"
-                Style="{StaticResource FiltersTextBlock}"
+                Style="{StaticResource StandardTextBlock}"
                 Text="Ulica:" />
             <TextBox
                 Grid.Row="2"
@@ -79,7 +79,7 @@
                     Grid.Column="0"
                     Margin="0,0,0,9.2"
                     VerticalAlignment="Bottom"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Typ dłużnika:" />
 
                 <Grid Grid.Row="8" Grid.Column="2">
@@ -88,11 +88,11 @@
                         <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <RadioButton Content="Osoba fizyczna" Style="{StaticResource FiltersRadioButton}" />
+                    <RadioButton Content="Osoba fizyczna" Style="{StaticResource StandardRadioButton}" />
                     <RadioButton
                         Grid.Column="2"
                         Content="Firma"
-                        Style="{StaticResource FiltersRadioButton}" />
+                        Style="{StaticResource StandardRadioButton}" />
                 </Grid>
 
             </Grid>
@@ -110,7 +110,7 @@
                     Grid.Column="0"
                     Margin="0,0,0,9.2"
                     VerticalAlignment="Bottom"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Klient zagraniczny:" />
 
                 <Grid Grid.Row="8" Grid.Column="2">
@@ -119,11 +119,11 @@
                         <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <RadioButton Content="Tak" Style="{StaticResource FiltersRadioButton}" />
+                    <RadioButton Content="Tak" Style="{StaticResource StandardRadioButton}" />
                     <RadioButton
                         Grid.Column="2"
                         Content="Nie"
-                        Style="{StaticResource FiltersRadioButton}" />
+                        Style="{StaticResource StandardRadioButton}" />
                 </Grid>
 
             </Grid>
@@ -131,7 +131,7 @@
             <TextBlock
                 Grid.Row="6"
                 Grid.Column="0"
-                Style="{StaticResource FiltersTextBlock}"
+                Style="{StaticResource StandardTextBlock}"
                 Text="Bank:" />
             <TextBox
                 Grid.Row="6"
@@ -141,7 +141,7 @@
             <TextBlock
                 Grid.Row="6"
                 Grid.Column="4"
-                Style="{StaticResource FiltersTextBlock}"
+                Style="{StaticResource StandardTextBlock}"
                 Text="IBAN:" />
             <TextBox
                 Grid.Row="6"
@@ -151,7 +151,7 @@
 
             <TextBlock
                 Grid.Row="8"
-                Style="{StaticResource FiltersTextBlock}"
+                Style="{StaticResource StandardTextBlock}"
                 Text="Numer konta: " />
 
             <TextBox
@@ -176,21 +176,21 @@
 
             <TextBlock
                 FontWeight="Black"
-                Style="{StaticResource FiltersTextBlock}"
+                Style="{StaticResource StandardTextBlock}"
                 Text="PARAMETRY" />
             <StackPanel Grid.Row="2">
-                <CheckBox Content="Zainicjalizuj pustę sprawę dla dłużnika" Style="{StaticResource FiltersCheckBox}" />
+                <CheckBox Content="Zainicjalizuj pustę sprawę dla dłużnika" Style="{StaticResource StandardCheckBox}" />
                 <TextBlock />
-                <CheckBox Content="Otwóz okno dowiązywania sprawy, po utworzeniu dłużnika" Style="{StaticResource FiltersCheckBox}" />
+                <CheckBox Content="Otwóz okno dowiązywania sprawy, po utworzeniu dłużnika" Style="{StaticResource StandardCheckBox}" />
                 <TextBlock />
-                <CheckBox Content="Zainicjalizuj dłużnika, jako niewypłacalnego" Style="{StaticResource FiltersCheckBox}" />
+                <CheckBox Content="Zainicjalizuj dłużnika, jako niewypłacalnego" Style="{StaticResource StandardCheckBox}" />
 
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="2">
-                <Button Content="Dodaj klienta" Style="{StaticResource BottomButton}" />
+                <Button Content="Dodaj klienta" Style="{StaticResource StandardButton}" />
                 <TextBlock />
-                <Button Content="Anuluj" Style="{StaticResource BottomButton}" />
+                <Button Content="Anuluj" Style="{StaticResource StandardButton}" />
             </StackPanel>
 
         </Grid>

@@ -1,0 +1,146 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../DarkModeControlsTemplates.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  Styl dla głównego grida, agregującego content w każdem zakładce  -->
+    <Style x:Key="Tab_MainGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="20,10,20,0" />
+    </Style>
+
+
+    <!--  ///////////////////////////////////////////  -->
+    <!--  ///////////////// TOLBAR //////////////////  -->
+    <!--  ///////////////////////////////////////////  -->
+
+    <!--  Styl główny tla ToolBaru (paska z przyciskami)  -->
+    <Style
+        x:Key="ToolbarStyle"
+        BasedOn="{StaticResource ToolbarDarkStyle}"
+        TargetType="{x:Type ToolBar}" />
+
+    <!--  Styl dla przycisków  -->
+    <Style x:Key="ToolbarButton" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="10,0,10,0" />
+        <Setter Property="Margin" Value="10,0,10,0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  Styl dla ikon w przyciskach  -->
+    <Style x:Key="ToolbarButtonImage" TargetType="{x:Type Image}">
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Margin" Value="0,5,0,5" />
+    </Style>
+
+    <!--  Styl dla tekstu w przyciskach  -->
+    <Style x:Key="ToolbarButtontText" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#aaaaaa" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Margin" Value="0,5,0,5" />
+    </Style>
+
+    <!--  ///////////////////////////////////////////  -->
+    <!--  ///////////////// EXPANDER ////////////////  -->
+    <!--  ///////////////////////////////////////////  -->
+
+    <!--  Główny styl dla Expandera (tego co można zwijać i rozzwijać)  -->
+    <Style x:Key="ExpanderHeadertextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Foreground" Value="#aaaaaa" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+
+    <!--  ///////////////////////////////////////////  -->
+    <!--  /////////////////// INPUTY ////////////////  -->
+    <!--  ///////////////////////////////////////////  -->
+
+    <!--  Styl dla inputa z możliwościa wybrania daty  -->
+    <Style x:Key="DatePickerDark" TargetType="{x:Type DatePicker}">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Height" Value="30" />
+    </Style>
+
+    <!--  Styl dla zwykłego inputa  -->
+    <Style x:Key="TextBoxDark" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="Background" Value="#515151" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="10,0,0,0" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="25" />
+    </Style>
+
+    <!--  Styl dla inputa, z któego można wskazywać z listy  -->
+    <Style
+        x:Key="ComboBoxDark"
+        BasedOn="{StaticResource ComboBoxDarkMode}"
+        TargetType="{x:Type ComboBox}">
+        <Setter Property="Height" Value="25" />
+    </Style>
+
+    <!--  Styl dla elementu listy z ComboBox'a  -->
+    <Style x:Key="ComboBoxItemDark" TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="Background" Value="#515151" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="5" />
+    </Style>
+
+    <!--  ///////////////////////////////////////////  -->
+    <!--  ///////////////// PRZYCISKI ///////////////  -->
+    <!--  ///////////////////////////////////////////  -->
+
+    <!--  Styl dla przycisku  -->
+    <Style
+        x:Key="StandardButton"
+        BasedOn="{StaticResource DarkModeButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="180" />
+    </Style>
+
+    <!--  Styl dla ChceckBoxa  -->
+    <Style x:Key="StandardCheckBox" TargetType="CheckBox">
+        <Setter Property="Foreground" Value="#aaaaaa" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!--  Styl dla RadioButtona  -->
+    <Style x:Key="StandardRadioButton" TargetType="RadioButton">
+        <Setter Property="Foreground" Value="#aaaaaa" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,20,0" />
+    </Style>
+
+
+    <!--  ///////////////////////////////////////////  -->
+    <!--  ////////////////// TABELA /////////////////  -->
+    <!--  ///////////////////////////////////////////  -->
+
+    <!--  Styl dla tabeli, reperezntującej dane  -->
+    <Style x:Key="DataGirdDark" TargetType="{x:Type DataGrid}">
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+        <Setter Property="BorderBrush" Value="#515151" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <!--  ///////////////////////////////////////////  -->
+    <!--  ////////////// POLA TEKSTOWE //////////.///  -->
+    <!--  ///////////////////////////////////////////  -->
+
+    <!--  Standradowy styl dla napisu  -->
+    <Style x:Key="StandardTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#aaaaaa" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="13" />
+    </Style>
+
+
+
+</ResourceDictionary>

@@ -14,6 +14,29 @@
     WindowStyle="None"
     mc:Ignorable="d">
 
+    <Window.InputBindings>
+        <KeyBinding
+            Key="S"
+            Command="{Binding CreateIssueCommand}"
+            Modifiers="Ctrl" />
+
+        <KeyBinding
+            Key="D"
+            Command="{Binding CreateDebtorCommand}"
+            Modifiers="Ctrl" />
+
+        <KeyBinding
+            Key="K"
+            Command="{Binding CreateClientCommand}"
+            Modifiers="Ctrl" />
+
+        <KeyBinding
+            Key="I"
+            Command="{Binding Import}"
+            Modifiers="Ctrl" />
+
+    </Window.InputBindings>
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -50,30 +73,88 @@
                     <MenuItem
                         Command="{Binding CreateIssueCommand}"
                         Header="Dodaj nową sprawę"
-                        Style="{StaticResource DarkModeMenuItem}" />
-                    <MenuItem Header="Importuj sprawy" Style="{StaticResource DarkModeMenuItem}" />
-                    <MenuItem Header="Exportuj sprawy" Style="{StaticResource DarkModeMenuItem}" />
+                        InputGestureText="CTRL + S"
+                        Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/add.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem
+                        Header="Importuj sprawy"
+                        InputGestureText="CTRL + I"
+                        Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/import.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Exportuj sprawy" Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/export.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Klienci" Style="{StaticResource TopMenuItem}">
                     <MenuItem
                         Command="{Binding CreateClientCommand}"
                         Header="Dodaj nowego klienta"
-                        Style="{StaticResource DarkModeMenuItem}" />
+                        InputGestureText="CTRL + K"
+                        Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/add.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <MenuItem
-                        Command="{Binding ImportClients}"
+                        Command="{Binding Import}"
                         Header="Importuj klientów"
-                        Style="{StaticResource DarkModeMenuItem}" />
-                    <MenuItem Header="Exportuj klientów" Style="{StaticResource DarkModeMenuItem}" />
+                        InputGestureText="CTRL + I"
+                        Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/import.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Exportuj klientów" Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/export.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Dłużnicy" Style="{StaticResource TopMenuItem}">
                     <MenuItem
                         Command="{Binding CreateDebtorCommand}"
                         Header="Dodaj nowego dłużnika"
-                        Style="{StaticResource DarkModeMenuItem}" />
-                    <MenuItem Header="Importuj dłużników" Style="{StaticResource DarkModeMenuItem}" />
-                    <MenuItem Header="Exportuj dłużników" Style="{StaticResource DarkModeMenuItem}" />
+                        InputGestureText="CTRL + D"
+                        Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/add.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem
+                        Command="{Binding Import}"
+                        Header="Importuj dłużników"
+                        InputGestureText="CTRL + I"
+                        Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/import.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Exportuj dłużników" Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/export.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
-                <MenuItem Header="Pomoc" Style="{StaticResource TopMenuItem}" />
+                <MenuItem Header="Program" Style="{StaticResource TopMenuItem}">
+                    <MenuItem Header="Pomoc" Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/help.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="O Programie" Style="{StaticResource DarkModeMenuItem}">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/TopBar/about.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
             </Menu>
 
             <!--  Przyciski w prawym, górnym rogu  -->
@@ -148,5 +229,55 @@
                 ContentTemplate="{StaticResource WorkspacesTemplate}" />
 
         </Grid>
+
+        <StatusBar
+            Grid.Row="3"
+            Grid.Column="0"
+            Background="#302d2d">
+            <StatusBarItem HorizontalAlignment="Left">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="15" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Width="20" Source="/Icons/StatusBar/user.png" />
+                    <TextBlock Grid.Column="2" Style="{StaticResource StandardTextBlock}">Administrator</TextBlock>
+                </Grid>
+
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem HorizontalAlignment="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="15" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Width="20" Source="/Icons/StatusBar/servers.png" />
+                    <TextBlock Grid.Column="2" Style="{StaticResource StandardTextBlock}">SQL: OK</TextBlock>
+                </Grid>
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem
+                Height="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="15" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Width="20" Source="/Icons/StatusBar/clock.png" />
+                    <TextBlock Grid.Column="2" Style="{StaticResource StandardTextBlock}">12:25</TextBlock>
+                </Grid>
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem HorizontalAlignment="Right">
+
+                <TextBlock Style="{StaticResource StandardTextBlock}">Oprogramowanie autorstwa Nexicolt, dla WSb-NLU</TextBlock>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>

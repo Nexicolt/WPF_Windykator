@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="Windykator_PRO.View.ImportClientsView"
+    x:Class="Windykator_PRO.View.ImportOptionView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,11 +8,11 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="/Dictionares/ImportClientsDictionary.xaml" />
+        <ResourceDictionary Source="/Dictionares/Workspace/ImportOptionDictionary.xaml" />
     </UserControl.Resources>
 
 
-    <Grid Margin="20,10,20,0">
+    <Grid Style="{StaticResource Tab_MainGrid}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="10" />
@@ -41,19 +41,19 @@
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
 
-        <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Scieżka do pliku" />
+        <TextBlock Style="{StaticResource StandardTextBlock}" Text="Scieżka do pliku" />
         <TextBox
             Grid.Column="2"
             Grid.ColumnSpan="5"
             Style="{StaticResource TextBoxDark}" />
         <Button
             Grid.Column="8"
-            Content="Otwórz"
+            Content="OPEN"
             Style="{StaticResource FindFileButton}" />
 
         <TextBlock
             Grid.Row="2"
-            Style="{StaticResource FiltersTextBlock}"
+            Style="{StaticResource StandardTextBlock}"
             Text="Format danych:" />
 
         <ComboBox
@@ -68,7 +68,7 @@
         </ComboBox>
         <TextBlock
             Grid.Row="4"
-            Style="{StaticResource FiltersTextBlock}"
+            Style="{StaticResource StandardTextBlock}"
             Text="Znak rozdzielający:" />
 
         <Grid Grid.Row="4" Grid.Column="2">
@@ -81,21 +81,21 @@
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
 
-            <RadioButton Content="; (średnik)" Style="{StaticResource FiltersRadioButton}" />
+            <RadioButton Content="; (średnik)" Style="{StaticResource StandardRadioButton}" />
             <RadioButton
                 Grid.Column="2"
                 Content=". (kropka)"
-                Style="{StaticResource FiltersRadioButton}" />
+                Style="{StaticResource StandardRadioButton}" />
             <RadioButton
                 Grid.Column="4"
                 Content=", (przecinek)"
-                Style="{StaticResource FiltersRadioButton}" />
+                Style="{StaticResource StandardRadioButton}" />
 
         </Grid>
 
         <TextBlock
             Grid.Row="6"
-            Style="{StaticResource FiltersTextBlock}"
+            Style="{StaticResource StandardTextBlock}"
             Text="Ogranicznik tekstu:" />
 
         <Grid Grid.Row="6" Grid.Column="2">
@@ -108,21 +108,21 @@
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
 
-            <RadioButton Content="' (apostrof)" Style="{StaticResource FiltersRadioButton}" />
+            <RadioButton Content="' (apostrof)" Style="{StaticResource StandardRadioButton}" />
             <RadioButton
                 Grid.Column="2"
                 Content="'' (cudzysłów)"
-                Style="{StaticResource FiltersRadioButton}" />
+                Style="{StaticResource StandardRadioButton}" />
             <RadioButton
                 Grid.Column="4"
                 Content=" (brak)"
-                Style="{StaticResource FiltersRadioButton}" />
+                Style="{StaticResource StandardRadioButton}" />
 
         </Grid>
 
         <TextBlock
             Grid.Row="8"
-            Style="{StaticResource FiltersTextBlock}"
+            Style="{StaticResource StandardTextBlock}"
             Text="Ignoruj błędy:" />
 
         <Grid Grid.Row="8" Grid.Column="2">
@@ -133,11 +133,11 @@
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
 
-            <RadioButton Content="Tak" Style="{StaticResource FiltersRadioButton}" />
+            <RadioButton Content="Tak" Style="{StaticResource StandardRadioButton}" />
             <RadioButton
                 Grid.Column="2"
                 Content="Nie"
-                Style="{StaticResource FiltersRadioButton}" />
+                Style="{StaticResource StandardRadioButton}" />
 
 
         </Grid>

@@ -1,9 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Input;
 using Windykator_PRO.Helpers;
 
@@ -19,14 +14,18 @@ namespace Windykator_PRO.ViewModel
         #endregion
 
         #region CloseCommand
-        //tu będzie komenda do zamykania zakładki 
+        //Komenda, powiązana z zamykaniem zakładki
         private BaseCommand _CloseCommand;
+
+        /**
+         * Metoda wywoływana przy zamykaniu zakładki
+         */
         public ICommand CloseCommand
         {
             get
             {
                 if (_CloseCommand == null)
-                    _CloseCommand = new BaseCommand(()=>this.OnRequestClose());//ta komenda wywoła metodę OnRequestClose
+                    _CloseCommand = new BaseCommand(()=>this.OnRequestClose());
                 return _CloseCommand;
             }
         }

@@ -63,9 +63,10 @@
     <Compile Include="ViewModel\ClientsViewModel.cs" />
     <Compile Include="ViewModel\CommandViewModel.cs" />
     <Compile Include="ViewModel\DebtorsViewModel.cs" />
-    <Compile Include="ViewModel\ImportClientsViewModel.cs" />
+    <Compile Include="ViewModel\ImportOptionViewModel.cs" />
     <Compile Include="ViewModel\IssuesViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\WorkspaceViewModel.cs" />
     <Compile Include="View\AddNewClientView.xaml.cs">
       <DependentUpon>AddNewClientView.xaml</DependentUpon>
@@ -82,8 +83,8 @@
     <Compile Include="View\DebtorsView.xaml.cs">
       <DependentUpon>DebtorsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ImportClientsView.xaml.cs">
-      <DependentUpon>ImportClientsView.xaml</DependentUpon>
+    <Compile Include="View\ImportOptionView.xaml.cs">
+      <DependentUpon>ImportOptionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\IssuesView.xaml.cs">
       <DependentUpon>IssuesView.xaml</DependentUpon>
@@ -91,15 +92,18 @@
     <Compile Include="View\LoginForm.xaml.cs">
       <DependentUpon>LoginForm.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dictionares\AddNewIssueDictionary.xaml">
+    <Compile Include="View\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Dictionares\Workspace\AddNewIssueDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Dictionares\AddNewDebtorDictionary.xaml">
+    <Page Include="Dictionares\Workspace\AddNewDebtorDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Dictionares\AddNewClientDictionary.xaml">
+    <Page Include="Dictionares\Workspace\AddNewClientDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,11 +111,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dictionares\DebtorsDictionary.xaml">
+    <Page Include="Dictionares\Workspace\DebtorsDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Dictionares\ClientsDictionary.xaml">
+    <Page Include="Dictionares\Workspace\ClientsDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,11 +123,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dictionares\ImportClientsDictionary.xaml">
+    <Page Include="Dictionares\Workspace\ImportOptionDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dictionares\IssuesDictionary.xaml">
+    <Page Include="Dictionares\Workspace\IssuesDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -140,6 +144,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionares\TopBarDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionares\Workspace\SettingsDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionares\Workspace\WorkspaceDefaultStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,7 +175,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ImportClientsView.xaml">
+    <Page Include="View\ImportOptionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +199,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -251,6 +267,34 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Menu\show_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Menu\ustawienia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Menu\ustawienia_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\TopBar\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\TopBar\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\TopBar\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\TopBar\export.png" />
+    <Resource Include="Icons\TopBar\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\StatusBar\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\StatusBar\servers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\StatusBar\clock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

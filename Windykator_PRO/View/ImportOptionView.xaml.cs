@@ -18,9 +18,9 @@ namespace Windykator_PRO.View
     /// <summary>
     /// Logika interakcji dla klasy ImportClientsView.xaml
     /// </summary>
-    public partial class ImportClientsView : UserControl
+    public partial class ImportOptionView : UserControl
     {
-        public ImportClientsView()
+        public ImportOptionView()
         {
             InitializeComponent();
         }

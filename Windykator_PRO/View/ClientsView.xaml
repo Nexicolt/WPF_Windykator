@@ -8,10 +8,10 @@
     Background="Transparent"
     mc:Ignorable="d">
     <UserControl.Resources>
-        <ResourceDictionary Source="/Dictionares/ClientsDictionary.xaml" />
+        <ResourceDictionary Source="/Dictionares/Workspace/ClientsDictionary.xaml" />
     </UserControl.Resources>
 
-    <Grid Margin="20,10,20,0">
+    <Grid Style="{StaticResource Tab_MainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -20,7 +20,8 @@
         </Grid.RowDefinitions>
 
         <ToolBar Grid.Row="0" Style="{StaticResource ToolbarStyle}">
-            <Button Style="{StaticResource ToolbarButton}">
+
+            <Button Command="{Binding CreateClientCommand}" Style="{StaticResource ToolbarButton}">
                 <StackPanel>
                     <Image Source="/Icons/Clients/add_client.png" Style="{StaticResource ToolbarButtonImage}" />
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Dodaj klienta" />
@@ -39,7 +40,7 @@
                 </StackPanel>
             </Button>
             <Separator Background="Black" />
-            <Button Style="{StaticResource ToolbarButton}">
+            <Button Command="{Binding Import}" Style="{StaticResource ToolbarButton}">
                 <StackPanel>
                     <Image Source="/Icons/Clients/import_client.png" Style="{StaticResource ToolbarButtonImage}" />
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Importuj" />
@@ -84,7 +85,7 @@
 
                 </Grid.RowDefinitions>
 
-                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Nazwa:" />
+                <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa:" />
                 <TextBox
                     Grid.Column="2"
                     Grid.ColumnSpan="5"
@@ -92,7 +93,7 @@
 
                 <TextBlock
                     Grid.Row="2"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Miasto:" />
                 <TextBox
                     Grid.Row="2"
@@ -102,7 +103,7 @@
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="4"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Ulica:" />
                 <TextBox
                     Grid.Row="2"
@@ -119,7 +120,7 @@
                         Grid.Column="0"
                         Margin="0,0,0,9.2"
                         VerticalAlignment="Bottom"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Typ klienta:" />
 
                     <Grid Grid.Row="8" Grid.Column="2">
@@ -128,11 +129,11 @@
                             <ColumnDefinition Width="20" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <RadioButton Content="Osoba fizyczna" Style="{StaticResource FiltersRadioButton}" />
+                        <RadioButton Content="Osoba fizyczna" Style="{StaticResource StandardRadioButton}" />
                         <RadioButton
                             Grid.Column="2"
                             Content="Firma"
-                            Style="{StaticResource FiltersRadioButton}" />
+                            Style="{StaticResource StandardRadioButton}" />
                     </Grid>
 
                 </Grid>
@@ -147,7 +148,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock
                         Grid.Column="0"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Postępowanie sądowe:" />
                     <Grid Grid.Row="2" Grid.Column="2">
                         <Grid.ColumnDefinitions>
@@ -156,11 +157,11 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <RadioButton Content="Tak" Style="{StaticResource FiltersRadioButton}" />
+                        <RadioButton Content="Tak" Style="{StaticResource StandardRadioButton}" />
                         <RadioButton
                             Grid.Column="2"
                             Content="Nie"
-                            Style="{StaticResource FiltersRadioButton}" />
+                            Style="{StaticResource StandardRadioButton}" />
 
                     </Grid>
                 </Grid>
@@ -179,7 +180,7 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Należność od:" />
                     <TextBox
                         Grid.Row="0"
@@ -189,7 +190,7 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="4"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Należność do:" />
                     <TextBox
                         Grid.Row="0"
@@ -214,7 +215,7 @@
                     <TextBlock
                         Grid.Row="0"
                         Grid.Column="0"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Waluta:" />
                     <TextBox
                         Grid.Row="0"
@@ -298,7 +299,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Style="{StaticResource BottomButton}">
+                    <Button Style="{StaticResource StandardButton}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Szczegóły" />
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="klienta" />

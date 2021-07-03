@@ -2,38 +2,28 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="DarkModeControlsTemplates.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <Style x:Key="DarkModeTabControl" TargetType="{x:Type TabControl}">
-        <Setter Property="Background" Value="#333333" />
-        <Setter Property="BorderThickness" Value="0" />
-    </Style>
+
+    <!--  Nadpisanie templatki TabItem, żeby zmieniac tło =, gdy ten jest zaznaczony  -->
     <Style TargetType="{x:Type TabItem}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabItem}">
                     <Grid>
-                        <Border
-                            Name="Border"
-                            Margin="0,0,0,0"
-                            Padding="5"
-                            Background="Transparent"
-                            BorderBrush="Black"
-                            BorderThickness="0">
+                        <Border Name="Border">
                             <ContentPresenter
-                                x:Name="ContentSite"
-                                Margin="12,2,12,2"
+                                Margin="5"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                ContentSource="Header"
-                                RecognizesAccessKey="True" />
+                                ContentSource="Header" />
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Panel.ZIndex" Value="100" />
                             <Setter TargetName="Border" Property="Background" Value="#4381f0" />
+                            <Setter Property="FontWeight" Value="Bold" />
                         </Trigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <!--<Setter Property="Foreground" Value="#FFFFFF" />-->
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="#aaaaaa" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -41,6 +31,7 @@
         </Setter>
     </Style>
 
+    <!--  Templatka dla TabItemu  -->
     <DataTemplate x:Key="ClosableTabItemTemplate">
         <DockPanel Width="120">
             <Button
@@ -61,6 +52,7 @@
         </DockPanel>
     </DataTemplate>
 
+    <!--  Templatka dla "Workspace", czyli obszaru, z zakładkami  -->
     <DataTemplate x:Key="WorkspacesTemplate">
         <TabControl
             Margin="0"
@@ -71,4 +63,14 @@
             ItemTemplate="{StaticResource ClosableTabItemTemplate}"
             ItemsSource="{Binding}" />
     </DataTemplate>
+
+    <Style x:Key="StandardTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#aaaaaa" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="13" />
+    </Style>
+
+    <Style x:Key="StatusBarGridElement" TargetType="{x:Type Grid}" />
+
+
 </ResourceDictionary>

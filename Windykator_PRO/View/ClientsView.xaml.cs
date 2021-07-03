@@ -25,4 +25,5 @@ namespace Windykator_PRO.View
             InitializeComponent();
         }
     }
+
 }

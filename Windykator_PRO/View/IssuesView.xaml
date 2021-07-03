@@ -8,19 +8,21 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="/Dictionares/IssuesDictionary.xaml" />
+        <ResourceDictionary Source="/Dictionares/Workspace/IssuesDictionary.xaml" />
     </UserControl.Resources>
 
-    <Grid Margin="20,10,20,0">
+    <!--  Główny grid, agregujący załą zawartośc  -->
+    <Grid Style="{StaticResource Tab_MainGrid}">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-
         </Grid.RowDefinitions>
 
+
         <ToolBar Grid.Row="0" Style="{StaticResource ToolbarStyle}">
-            <Button Style="{StaticResource ToolbarButton}">
+            <Button Command="{Binding CreateIssueCommand}" Style="{StaticResource ToolbarButton}">
                 <StackPanel>
                     <Image Source="/Icons/Issues/add_issue.png" Style="{StaticResource ToolbarButtonImage}" />
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Dodaj sprawę" />
@@ -84,18 +86,18 @@
                     <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Data od:" />
+                <TextBlock Style="{StaticResource StandardTextBlock}" Text="Data od:" />
                 <DatePicker Grid.Column="2" Style="{StaticResource DatePickerDark}" />
 
                 <TextBlock
                     Grid.Column="4"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Data do:" />
                 <DatePicker Grid.Column="6" Style="{StaticResource DatePickerDark}" />
 
                 <TextBlock
                     Grid.Row="2"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Dłużnik:" />
                 <ComboBox
                     Grid.Row="2"
@@ -107,7 +109,7 @@
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="4"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Wierzyciel:" />
                 <ComboBox
                     Grid.Row="2"
@@ -119,7 +121,7 @@
                 <TextBlock
                     Grid.Row="4"
                     Grid.Column="0"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Nr. sprawy:" />
                 <TextBox
                     Grid.Row="4"
@@ -136,7 +138,7 @@
                         Grid.Column="0"
                         Margin="0,0,0,9.2"
                         VerticalAlignment="Bottom"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Typ klienta:" />
 
                     <Grid Grid.Row="8" Grid.Column="2">
@@ -145,11 +147,11 @@
                             <ColumnDefinition Width="20" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <RadioButton Content="Osoba fizyczna" Style="{StaticResource FiltersRadioButton}" />
+                        <RadioButton Content="Osoba fizyczna" Style="{StaticResource StandardRadioButton}" />
                         <RadioButton
                             Grid.Column="2"
                             Content="Firma"
-                            Style="{StaticResource FiltersRadioButton}" />
+                            Style="{StaticResource StandardRadioButton}" />
                     </Grid>
 
                 </Grid>
@@ -164,7 +166,7 @@
                         Grid.Column="0"
                         Margin="0,0,0,9.2"
                         VerticalAlignment="Bottom"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Status:" />
 
                     <Grid Grid.Row="8" Grid.Column="2">
@@ -177,13 +179,13 @@
                             Grid.Row="6"
                             Grid.Column="0"
                             Content="Zakończona"
-                            Style="{StaticResource FiltersCheckBox}" />
+                            Style="{StaticResource StandardCheckBox}" />
 
                         <CheckBox
                             Grid.Row="8"
                             Grid.Column="2"
                             Content="W toku"
-                            Style="{StaticResource FiltersCheckBox}" />
+                            Style="{StaticResource StandardCheckBox}" />
                     </Grid>
                 </Grid>
 
@@ -247,19 +249,19 @@
                         <ColumnDefinition Width="3*" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Style="{StaticResource BottomButton}">
+                    <Button Style="{StaticResource StandardButton}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Szczegóły" />
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="sprawy" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="2" Style="{StaticResource BottomButton}">
+                    <Button Grid.Column="2" Style="{StaticResource StandardButton}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Dane" />
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="dłużnika" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="4" Style="{StaticResource BottomButton}">
+                    <Button Grid.Column="4" Style="{StaticResource StandardButton}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Dane" />
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="wierzyciela" />

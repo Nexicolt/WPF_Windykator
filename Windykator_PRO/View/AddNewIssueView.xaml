@@ -8,10 +8,10 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="/Dictionares/AddNewIssueDictionary.xaml" />
+        <ResourceDictionary Source="/Dictionares/Workspace/AddNewIssueDictionary.xaml" />
     </UserControl.Resources>
 
-    <Grid Margin="20,10,20,0">
+    <Grid Style="{StaticResource Tab_MainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="5" />
@@ -56,12 +56,12 @@
                     <RowDefinition Height="10" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Nazwa" />
+                <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa" />
                 <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
 
                 <TextBlock
                     Grid.Row="2"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Lokalizacja:" />
                 <TextBox
                     Grid.Row="2"
@@ -70,7 +70,7 @@
 
                 <TextBlock
                     Grid.Row="4"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Należność:" />
                 <TextBox
                     Grid.Row="4"
@@ -90,13 +90,13 @@
 
                     <TextBlock
                         Grid.Column="0"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Waluta:" />
                     <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
 
                     <TextBlock
                         Grid.Column="4"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Klient zagraniczny:" />
                     <TextBox Grid.Column="6" Style="{StaticResource TextBoxDark}" />
 
@@ -106,7 +106,7 @@
                     Grid.Row="8"
                     Grid.ColumnSpan="4"
                     Content="Wczytaj klienta"
-                    Style="{StaticResource BottomButton}" />
+                    Style="{StaticResource StandardButton}" />
 
 
             </Grid>
@@ -134,12 +134,12 @@
                     <RowDefinition Height="10" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Nazwa" />
+                <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa" />
                 <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
 
                 <TextBlock
                     Grid.Row="2"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Lokalizacja:" />
                 <TextBox
                     Grid.Row="2"
@@ -148,7 +148,7 @@
 
                 <TextBlock
                     Grid.Row="4"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Należność:" />
                 <TextBox
                     Grid.Row="4"
@@ -165,7 +165,7 @@
 
                     <TextBlock
                         Grid.Column="0"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Ilośc spraw:" />
                     <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
 
@@ -176,7 +176,7 @@
                     Grid.Row="8"
                     Grid.ColumnSpan="4"
                     Content="Wczytaj dłużnika"
-                    Style="{StaticResource BottomButton}" />
+                    Style="{StaticResource StandardButton}" />
 
 
             </Grid>
@@ -216,12 +216,12 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Numer dokumentu:" />
+                <TextBlock Style="{StaticResource StandardTextBlock}" Text="Numer dokumentu:" />
                 <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
 
                 <TextBlock
                     Grid.Column="4"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Typ dokumentu:" />
                 <ComboBox Grid.Column="6" Style="{StaticResource ComboBoxDark}">
                     <ComboBoxItem Content="Faktura VAT" Style="{StaticResource ComboBoxItemDark}" />
@@ -239,12 +239,12 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Style="{StaticResource FiltersTextBlock}" Text="Kwota od:" />
+                    <TextBlock Style="{StaticResource StandardTextBlock}" Text="Kwota od:" />
                     <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
 
                     <TextBlock
                         Grid.Column="4"
-                        Style="{StaticResource FiltersTextBlock}"
+                        Style="{StaticResource StandardTextBlock}"
                         Text="Kwota do:" />
                     <TextBox Grid.Column="6" Style="{StaticResource TextBoxDark}" />
 
@@ -254,7 +254,7 @@
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="4"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Data wystawienia:" />
                 <DatePicker
                     Grid.Row="2"
@@ -265,19 +265,19 @@
                 <TextBlock
                     Grid.Row="4"
                     Grid.Column="0"
-                    Style="{StaticResource FiltersTextBlock}"
+                    Style="{StaticResource StandardTextBlock}"
                     Text="Pokaż dołączone:" />
 
                 <CheckBox
                     Grid.Row="4"
                     Grid.Column="2"
-                    Style="{StaticResource FiltersCheckBox}" />
+                    Style="{StaticResource StandardCheckBox}" />
 
                 <Button
                     Grid.Row="4"
                     Grid.Column="6"
                     Content="Filtruj"
-                    Style="{StaticResource BottomButton}" />
+                    Style="{StaticResource StandardButton}" />
 
                 <DataGrid
                     Name="DaocumentDataGrid"
@@ -317,7 +317,7 @@
                     Grid.Row="8"
                     Grid.Column="6"
                     Content="Dodaj sprawę"
-                    Style="{StaticResource BottomButton}" />
+                    Style="{StaticResource StandardButton}" />
 
             </Grid>
 
