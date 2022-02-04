@@ -13,41 +13,50 @@ namespace Windykator_PRO.ViewModel
     public class MainWindowViewModel : BaseViewModel
     {
         public static MainWindowViewModel MainWindowHandler = null;
+
         public MainWindowViewModel()
         {
             MainWindowViewModel.MainWindowHandler = this;
         }
 
         #region Fields
+
         //Kolekcja z komendami (komenda = wowołanie nowej zakładki)
         private ReadOnlyCollection<CommandViewModel> _Commands;
+
         //Kolekcja z otwartymi zakładkami
         private ObservableCollection<WorkspaceViewModel> _Workspaces;
-        #endregion
+
+        #endregion Fields
 
         #region ToolBarComands
+
         /**
          * Główna funkcja, wykoszystywana w spersonalizowanych komendach. Sprawdza czy przekazany ViewModel jest NULL'em i na tej podstawie
          * zwraca jego nową instancję, lub już istniejącą
          */
+
         private BaseCommand getCommand(BaseCommand _command, WorkspaceViewModel workspace)
         {
-            if(_command == null)
-                _command = new BaseCommand(()=> Create(workspace));
+            if (_command == null)
+                _command = new BaseCommand(() => Create(workspace));
             return _command;
         }
 
         //Zmienna, reprezntującą komendę. Wykorzystywaną w 'GetCommand" do porównania i zwrócenia nowej instancji, czy instiejącej
         private BaseCommand _CreateClientCommand;
+
+        private BaseCommand _EditlientCommand;
+
         private BaseCommand _CreateDebtorCommand;
         private BaseCommand _CreateIssueCommand;
         private BaseCommand _Import;
-
 
         /**
          * Komenda wywoływana przy kliknięciu na określony link (W lewym menu lub w górnym. Wywoływana poprzez "binding"
          * (Dotyczy każdej funkcji w przestrzeni 'ToolBarComands')
          */
+
         public ICommand CreateClientCommand
         {
             get
@@ -55,6 +64,17 @@ namespace Windykator_PRO.ViewModel
                 return getCommand(_CreateClientCommand, new AddNewClientViewModel());
             }
         }
+
+        public void EditClientCommand(long customerId)
+        {
+            Create(new EditClientViewModel(customerId));
+        }
+
+        public void EditDebtorCommand(long customerId)
+        {
+            Create(new EditDebtorViewModel(customerId));
+        }
+
         public ICommand CreateDebtorCommand
         {
             get
@@ -62,6 +82,7 @@ namespace Windykator_PRO.ViewModel
                 return getCommand(_CreateDebtorCommand, new AddNewDebtorViewModel());
             }
         }
+
         public ICommand CreateIssueCommand
         {
             get
@@ -69,6 +90,16 @@ namespace Windykator_PRO.ViewModel
                 return getCommand(_CreateIssueCommand, new AddNewIssueViewModel());
             }
         }
+
+        private BaseCommand _CreateDocumentCommand;
+        public ICommand CreateDocumentCommand
+        {
+            get
+            {
+                return getCommand(_CreateDocumentCommand, new AddNewDocumentViewModel());
+            }
+        }
+
         public ICommand Import
         {
             get
@@ -77,20 +108,21 @@ namespace Windykator_PRO.ViewModel
             }
         }
 
-        #endregion
+        #endregion ToolBarComands
 
         #region Commands
+
         //Kolekcja, zawierająca wszystkie funkcje
         public ReadOnlyCollection<CommandViewModel> Commands
         {
             get
             {
-               //sprawdzamy czy lista linków po lewej stronie jest pusta
-                if(_Commands==null)
+                //sprawdzamy czy lista linków po lewej stronie jest pusta
+                if (_Commands == null)
                 {
-                    //Jeżeli lista linków jest pusta, to tworzymy tę listę przy pomocy funkcji CreateCommads();  
+                    //Jeżeli lista linków jest pusta, to tworzymy tę listę przy pomocy funkcji CreateCommads();
                     List<CommandViewModel> cmds = this.CreateCommands();
-                    //tworzymy 
+                    //tworzymy
                     _Commands = new ReadOnlyCollection<CommandViewModel>(cmds);
                 }
                 return _Commands;
@@ -100,18 +132,22 @@ namespace Windykator_PRO.ViewModel
         /**
          * Funkcja generuje linki w menu, po lewej stronie
          */
+
         private List<CommandViewModel> CreateCommands()
         {
             //Zwracana lista z linkami, którę będą w lewym menu
             return new List<CommandViewModel>
             {
-                 new CommandViewModel("Sprawy",new BaseCommand(()=>this.ShowIssues())), 
-                 new CommandViewModel("Klienci",new BaseCommand(()=>this.ShowClients())), 
-                 new CommandViewModel("Dłużnicy",new BaseCommand(()=>this.ShowDebtors())), 
-                 new CommandViewModel("Ustawienia",new BaseCommand(()=>this.ShowSettings()))
+                 new CommandViewModel("Sprawy",new BaseCommand(()=>this.ShowIssues())),
+                 new CommandViewModel("Klienci",new BaseCommand(()=>this.ShowClients())),
+                 new CommandViewModel("Dłużnicy",new BaseCommand(()=>this.ShowDebtors())),
+                 new CommandViewModel("Dokumenty",new BaseCommand(()=>this.ShowDocuments())),
+                 new CommandViewModel("Ustawienia",new BaseCommand(()=>this.ShowSettings())),
             };
         }
-        #endregion
+
+        #endregion Commands
+
         #region Workspaces
 
         //Kolekcja przechowuje wszystkie otwarte karty
@@ -128,10 +164,12 @@ namespace Windykator_PRO.ViewModel
                 return _Workspaces;
             }
         }
+
         /**
          * Funkcja wywoływana przy dodaniu lub usunięciu zakładki
          * Odświeża kolekcję i na nowo prezentuje ją w formie widoku dla użytkownika
          */
+
         private void OnWorkspacesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null && e.NewItems.Count != 0)
@@ -146,22 +184,27 @@ namespace Windykator_PRO.ViewModel
         /**
          * Metoda wywoływana przy zamknięciu zakładki
          */
+
         private void OnWorkspaceRequestClose(object sender, EventArgs e)
         {
             WorkspaceViewModel workspace = sender as WorkspaceViewModel;
             //workspace.Dispos();
             this.Workspaces.Remove(workspace);
         }
-        #endregion
+
+        #endregion Workspaces
+
         #region PrivateHelpers
+
         /**
          * Metoda dodaje nową zakładke do kolekcji
          */
-        private void Create(WorkspaceViewModel workspace) 
-        { 
-            this.Workspaces.Add(workspace); 
+
+        private void Create(WorkspaceViewModel workspace)
+        {
+            this.Workspaces.Add(workspace);
             //Ustaw nową zakłądkę na aktywną i odśwież "workspace"
-            this.SetActiveWorkspace(workspace); 
+            this.SetActiveWorkspace(workspace);
         }
 
         private void ShowIssues()
@@ -206,6 +249,20 @@ namespace Windykator_PRO.ViewModel
             this.SetActiveWorkspace(workspace);
         }
 
+        private void ShowDocuments()
+        {
+            //Sprawdź, czy kolekcja zawiera już rządaną zakładkę
+            AllDocumentsViewModel workspace = this.Workspaces.FirstOrDefault(vm => vm is AllDocumentsViewModel) as AllDocumentsViewModel;
+            //Utwórz nową i ją dodaj, jeśli nie
+            if (workspace == null)
+            {
+                workspace = new AllDocumentsViewModel();
+                this.Workspaces.Add(workspace);
+            }
+            //Ustaw na aktywną, jeśli tak
+            this.SetActiveWorkspace(workspace);
+        }
+
         private void ShowSettings()
         {
             //Sprawdź, czy kolekcja zawiera już rządaną zakładkę
@@ -223,6 +280,7 @@ namespace Windykator_PRO.ViewModel
         /**
          * Metoda ustawia "workspace", na ten przekazany w parametrze (odświeża widok)
          */
+
         private void SetActiveWorkspace(WorkspaceViewModel workspace)
         {
             //Debug.Assert(this.Workspaces.Contains(workspace));
@@ -231,6 +289,7 @@ namespace Windykator_PRO.ViewModel
             if (collectionView != null)
                 collectionView.MoveCurrentTo(workspace);
         }
-        #endregion
+
+        #endregion PrivateHelpers
     }
 }

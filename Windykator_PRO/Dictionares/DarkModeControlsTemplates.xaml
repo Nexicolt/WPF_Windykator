@@ -1,4 +1,5 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--  Styl resetujący wygląd [BUTTON]  -->
     <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
@@ -33,7 +34,6 @@
         <Setter Property="Foreground" Value="#aaaaaa" />
         <Setter Property="Padding" Value="5" />
 
-
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -52,12 +52,9 @@
                 <Setter Property="Cursor" Value="Hand" />
                 <Setter Property="FontWeight" Value="Bold" />
                 <Setter Property="Foreground" Value="White" />
-
             </Trigger>
         </Style.Triggers>
-
     </Style>
-
 
     <Style x:Key="MenuItemDefaultDark" TargetType="{x:Type MenuItem}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -131,7 +128,7 @@
                                                     Height="{Binding ActualHeight, ElementName=SubMenuBorder}"
                                                     Fill="{Binding Background, ElementName=SubMenuBorder}" />
                                             </Canvas>
-                                            <!--<Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Margin="29,2,0,2" Width="1"/>-->
+                                            <!--<Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Margin="29,2,0,2" Width="1" />-->
                                             <ItemsPresenter
                                                 x:Name="ItemsPresenter"
                                                 Grid.IsSharedSizeScope="True"
@@ -152,13 +149,13 @@
                             <Setter TargetName="Icon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <!--<Setter Property="Visibility" TargetName="GlyphPanel" Value="Visible"/>-->
+                            <!--<Setter Property="Visibility" TargetName="GlyphPanel" Value="Visible" />-->
                             <Setter TargetName="Icon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="IsHighlighted" Value="True">
                             <Setter TargetName="templateRoot" Property="Background" Value="#3D26A0DA" />
-                            <!--<Setter Property="Cursor" Value="Hand"/>-->
-                            <!--<Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF26A0DA"/>-->
+                            <!--<Setter Property="Cursor" Value="Hand" />-->
+                            <!--<Setter Property="BorderBrush" TargetName="templateRoot" Value="#FF26A0DA" />-->
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="templateRoot" Property="TextElement.Foreground" Value="#FF707070" />
@@ -231,7 +228,6 @@
     </Style>
 
     <Style x:Key="ComboBoxDarkMode" TargetType="{x:Type ComboBox}">
-
 
         <Setter Property="Foreground" Value="#FFFFFF" />
         <Setter Property="Template">
@@ -314,9 +310,36 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AdornedElementPlaceholder Name="customAdorner"
+                                                       Grid.Column="0"
+                                                       VerticalAlignment="Center" />
+                        <Border Grid.Column="1"
+                                    Width="20"
+                                    Height="20"
+                                    Margin="5,0,0,0"
+                                    Background="Red"
+                                    CornerRadius="10"
+                                    ToolTip="{Binding ElementName=customAdorner,
+                                                      Path=AdornedElement.(Validation.Errors).CurrentItem.ErrorContent}">
+                            <TextBlock HorizontalAlignment="center"
+                                           VerticalAlignment="center"
+                                           FontWeight="Bold"
+                                           Foreground="white"
+                                           Text="!" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
         <Style.Triggers />
-
-
     </Style>
     <Style TargetType="{x:Type DatePickerTextBox}">
         <Setter Property="Control.Template">
@@ -336,5 +359,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>

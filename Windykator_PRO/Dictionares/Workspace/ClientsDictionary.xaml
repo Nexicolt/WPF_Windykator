@@ -1,4 +1,5 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--  Słownik z stylami wykorzystywanymi w wielu zakładkach (uniknięcie powtarzania kodu)  -->
     <ResourceDictionary.MergedDictionaries>
@@ -9,5 +10,4 @@
     <Style x:Key="BottomButtonTextBlock" TargetType="{x:Type TextBlock}">
         <Setter Property="TextAlignment" Value="Center" />
     </Style>
-
 </ResourceDictionary>

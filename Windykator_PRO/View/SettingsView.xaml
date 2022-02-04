@@ -138,7 +138,6 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-
                 <TextBox Style="{StaticResource TextBoxDark}" />
                 <TextBlock
                     Grid.Column="2"
@@ -169,7 +168,6 @@
                     Content="Zmień email"
                     Style="{StaticResource DarkModeButton}" />
             </Grid>
-
         </Grid>
 
         <!--  Grid z nagłówkiem "UStawienia dokumentów"  -->
@@ -190,7 +188,6 @@
                 Text="Ustawienia dokumentów" />
             <Separator Grid.Row="4" Style="{StaticResource SettingsHeaderSeparator}" />
         </Grid>
-
 
         <!--  USTAWIENIA DOKUMENTÓW  -->
         <Grid Grid.Row="6">
@@ -309,10 +306,6 @@
                 Grid.ColumnSpan="3">
                 <Button Content="Zapisz dane" Style="{StaticResource DarkModeButton}" />
             </Grid>
-
-
         </Grid>
-
-
     </Grid>
 </UserControl>

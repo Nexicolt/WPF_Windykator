@@ -27,6 +27,7 @@ namespace Windykator_PRO.Helpers
                 return true;
             return _canExecute();
         }
+
         public event EventHandler CanExecuteChanged;
     }
 }

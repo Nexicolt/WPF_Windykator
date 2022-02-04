@@ -11,7 +11,6 @@
         <ResourceDictionary Source="/Dictionares/Workspace/ImportOptionDictionary.xaml" />
     </UserControl.Resources>
 
-
     <Grid Style="{StaticResource Tab_MainGrid}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -63,8 +62,6 @@
             <ComboBoxItem Content="JSON" Style="{StaticResource ComboBoxItemDark}" />
             <ComboBoxItem Content="XML" Style="{StaticResource ComboBoxItemDark}" />
             <ComboBoxItem Content="CSV" Style="{StaticResource ComboBoxItemDark}" />
-
-
         </ComboBox>
         <TextBlock
             Grid.Row="4"
@@ -90,7 +87,6 @@
                 Grid.Column="4"
                 Content=", (przecinek)"
                 Style="{StaticResource StandardRadioButton}" />
-
         </Grid>
 
         <TextBlock
@@ -117,7 +113,6 @@
                 Grid.Column="4"
                 Content=" (brak)"
                 Style="{StaticResource StandardRadioButton}" />
-
         </Grid>
 
         <TextBlock
@@ -138,10 +133,7 @@
                 Grid.Column="2"
                 Content="Nie"
                 Style="{StaticResource StandardRadioButton}" />
-
-
         </Grid>
-
 
         <DataGrid
             Name="ClientsDataGrid"
@@ -170,10 +162,7 @@
                 <DataGridTextColumn Width="110" Header="Należność" />
                 <DataGridTextColumn Width="110" Header="Waluta" />
                 <DataGridTextColumn Width="110" Header="Czy zagraniczny" />
-
             </DataGrid.Columns>
-
-
         </DataGrid>
 
         <Button
@@ -182,17 +171,11 @@
             Content="Weryfikuj plik"
             Style="{StaticResource ImportClinetsButton}" />
 
-
         <Button
             Grid.Row="12"
             Grid.Column="3"
             Grid.ColumnSpan="2"
             Content="Importuj klientów"
             Style="{StaticResource ImportClinetsButton}" />
-
-
-
-
-
     </Grid>
 </UserControl>

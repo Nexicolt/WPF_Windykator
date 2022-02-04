@@ -1,0 +1,205 @@
+﻿<UserControl x:Class="Windykator_PRO.View.AddNewDocumentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Windykator_PRO.View"
+              xmlns:Toogle="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
+             mc:Ignorable="d" 
+             Background="Transparent">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Dictionares/Workspace/ClientsDictionary.xaml" />
+    </UserControl.Resources>
+
+    <Grid Style="{StaticResource Tab_MainGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="0,10,0,0" HorizontalAlignment="Stretch" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="10" />
+
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource StandardTextBlock}" Text="Numer:" />
+            <TextBox
+                    Grid.Column="2"
+                    Grid.ColumnSpan="5"
+                    Style="{StaticResource TextBoxDark}"
+                    Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=DocNo,
+                    ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+            <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Style="{StaticResource StandardTextBlock}"
+                        Text="Typ:" />
+            <ComboBox
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        SelectedValue="{Binding Path=DocType,   ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        ItemsSource="{Binding Path=DocumentTypesForCombobox}"
+                        Style="{StaticResource ComboBoxDark}" />
+
+        </Grid>
+
+       
+        
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Wyszkiwanie usługi/asortymentu -->
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource ExpanderHeadertextBlock}" Text="Asortymenty/Usługi" Grid.Row="0" Grid.ColumnSpan="4" />
+                
+                <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa:" Grid.Row="2" />
+                <TextBox
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="5"
+                    Style="{StaticResource TextBoxDark}"
+                    Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=SearchCriteria_AssortmentName,
+                    ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+                <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Style="{StaticResource StandardTextBlock}"
+                        Text="Typ:" />
+                <ComboBox
+                        Grid.Row="4"
+                        Grid.Column="2"
+                    Grid.ColumnSpan="5"
+                        SelectedValue="{Binding Path=SearchCeriteria_AssortmentType}"
+                        ItemsSource="{Binding Path=AssortmentTypesForComboBox}"
+                        Style="{StaticResource ComboBoxDark}" />
+
+                <Grid Grid.Row="6" HorizontalAlignment="Center" Grid.ColumnSpan="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Dodaj" Style="{StaticResource StandardButton}" Command="{Binding AddPositionCommand}" Visibility="{Binding AddButtonVisibility}" />
+                    <Button Content="Usuń" Style="{StaticResource StandardButton}" Command="{Binding RemoveAddedPositionCommand}" Visibility="{Binding RemoveButtonVisibility}"/>
+                    <Button Content="Szukaj" Style="{StaticResource StandardButton}" Command="{Binding SearchCommand}" Grid.Column="2" />
+                    <Button Content="Zmień widok" Style="{StaticResource StandardButton}" Command="{Binding ChangeGridCommand}" Grid.Column="4" />
+                </Grid>
+
+            </Grid>
+            
+            
+            
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+                <DataGrid
+                    Name="ClientsDataGrid"
+                    Grid.Row="0"
+                    IsReadOnly="True"
+                    AutoGenerateColumns="False"
+                    Visibility="{Binding Path=AssortmentSearchGridVisibility}"
+                    Height="350"
+                    ColumnWidth="*"
+                    RowHeaderWidth="0"
+                    SelectedItem="{Binding Path=SelectedItemOnAssortmentsGrid}"
+                    ItemsSource="{Binding AssortmentsGridList, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource DataGirdDark}">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Nazwa asortymentu" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Typ" Binding="{Binding Type}" />
+                    </DataGrid.Columns>
+
+                    <!--  Zmiana koloru nazw kolumn  -->
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#515151" />
+                            <Setter Property="Foreground" Value="#aaaaaa" />
+                            <Setter Property="Padding" Value="10,5,10,5" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+
+                <DataGrid
+                 
+                    Grid.Row="0"
+                    IsReadOnly="True"
+                    Visibility="{Binding Path=AssortmentOnDocumentGridVisibility}"
+                    AutoGenerateColumns="False"
+                    Height="350"
+                    ColumnWidth="*"
+                    RowHeaderWidth="0"
+                    SelectedItem="{Binding Path=SelectedItemOnAssortmentOnDocumentsGrid}"
+                    ItemsSource="{Binding AssortmentsOnDocumentGridList, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource DataGirdDark}">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Nazwa asortymentu" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Typ" Binding="{Binding Type}" />
+                        <DataGridTextColumn Header="Ilość" Binding="{Binding Quantity}" />
+                    </DataGrid.Columns>
+
+                    <!--  Zmiana koloru nazw kolumn  -->
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#515151" />
+                            <Setter Property="Foreground" Value="#aaaaaa" />
+                            <Setter Property="Padding" Value="10,5,10,5" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+                
+                
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

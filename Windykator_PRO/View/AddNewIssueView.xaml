@@ -29,7 +29,6 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-
             <TextBlock Style="{StaticResource HeaderTextBlock}" Text="Klient" />
             <TextBlock
                 Grid.Column="2"
@@ -99,7 +98,6 @@
                         Style="{StaticResource StandardTextBlock}"
                         Text="Klient zagraniczny:" />
                     <TextBox Grid.Column="6" Style="{StaticResource TextBoxDark}" />
-
                 </Grid>
 
                 <Button
@@ -107,8 +105,6 @@
                     Grid.ColumnSpan="4"
                     Content="Wczytaj klienta"
                     Style="{StaticResource StandardButton}" />
-
-
             </Grid>
 
             <Grid
@@ -160,7 +156,6 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="10" />
                         <ColumnDefinition Width="120" />
-
                     </Grid.ColumnDefinitions>
 
                     <TextBlock
@@ -168,8 +163,6 @@
                         Style="{StaticResource StandardTextBlock}"
                         Text="Ilośc spraw:" />
                     <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
-
-
                 </Grid>
 
                 <Button
@@ -177,10 +170,7 @@
                     Grid.ColumnSpan="4"
                     Content="Wczytaj dłużnika"
                     Style="{StaticResource StandardButton}" />
-
-
             </Grid>
-
         </Grid>
 
         <Separator Grid.Row="1" />
@@ -247,8 +237,6 @@
                         Style="{StaticResource StandardTextBlock}"
                         Text="Kwota do:" />
                     <TextBox Grid.Column="6" Style="{StaticResource TextBoxDark}" />
-
-
                 </Grid>
 
                 <TextBlock
@@ -260,7 +248,6 @@
                     Grid.Row="2"
                     Grid.Column="6"
                     Style="{StaticResource DatePickerDark}" />
-
 
                 <TextBlock
                     Grid.Row="4"
@@ -288,8 +275,6 @@
                     RowHeaderWidth="0"
                     Style="{StaticResource DataGirdDark}">
 
-
-
                     <!--  Zmiana koloru nazw kolumn  -->
                     <DataGrid.Resources>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -308,20 +293,14 @@
                         <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status" />
                         <DataGridTextColumn Binding="{Binding Path=Kwota}" Header="Kwota" />
                     </DataGrid.Columns>
-
-
                 </DataGrid>
-
 
                 <Button
                     Grid.Row="8"
                     Grid.Column="6"
                     Content="Dodaj sprawę"
                     Style="{StaticResource StandardButton}" />
-
             </Grid>
-
-
         </Grid>
     </Grid>
 </UserControl>

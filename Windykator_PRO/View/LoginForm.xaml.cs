@@ -1,5 +1,10 @@
-﻿using System.Windows;
+﻿using System;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Windows;
 using System.Windows.Input;
+using Windykator_PRO.Database;
 using Windykator_PRO.ViewModel;
 
 namespace Windykator_PRO
@@ -9,10 +14,20 @@ namespace Windykator_PRO
     /// </summary>
     public partial class LoginForm : Window
     {
+        //Połączenie do bazy
+        private VindicationDatabase db = null;
+
         public LoginForm()
         {
-            InitializeComponent();
+            var mainWindow = new MainWindow();
+            mainWindow.DataContext = new MainWindowViewModel();
+            mainWindow.Show();
+            Close();
+
+            //InitializeComponent();
+            //db = new VindicationDatabase();
         }
+
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -28,12 +43,40 @@ namespace Windykator_PRO
 
         private void VerifyLoginData(object sender, RoutedEventArgs e)
         {
-            //NOwy obiekt okna głównego, wyświetlany po zalogowaniu. Zbindowany z ViewModelem
-            var mainWindow = new MainWindow();
-            mainWindow.DataContext = new MainWindowViewModel();
-            mainWindow.Show();
+            string login = this.LoginInput.Text;
+            string password = this.PasswordInput.Password;
 
-            Close();
+            string hashedPassword = Hash(password);
+
+            bool correctloginData = db.User.Where(row => row.Login == login && row.Password == hashedPassword && row.IsEnable).Count() > 0;
+            if (correctloginData)
+            {
+                var mainWindow = new MainWindow();
+                mainWindow.DataContext = new MainWindowViewModel();
+                mainWindow.Show();
+                ErrorPanel.Visibility = Visibility.Collapsed;
+                Close();
+            }
+            else
+            {
+                LoginWindow.Height = 330;
+                ErrorPanel.Visibility = Visibility.Visible;
+            }
+        }
+
+        /// <summary>
+        /// Funkcja hashująca zadany string
+        /// </summary>
+        private static string Hash(string password)
+        {
+            using (SHA384 sha = new SHA384CryptoServiceProvider())
+            {
+                byte[] preHash = Encoding.ASCII.GetBytes(password);
+
+                byte[] hash = sha.ComputeHash(preHash);
+
+                return Convert.ToBase64String(hash);
+            }
         }
     }
 }

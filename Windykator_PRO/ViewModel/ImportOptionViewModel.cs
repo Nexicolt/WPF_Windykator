@@ -1,14 +1,14 @@
-﻿
-
-namespace Windykator_PRO.ViewModel
+﻿namespace Windykator_PRO.ViewModel
 {
-    class ImportOptionViewModel : WorkspaceViewModel
+    internal class ImportOptionViewModel : WorkspaceViewModel
     {
         #region Constructor
+
         public ImportOptionViewModel()
         {
             base.DisplayName = "Importuj";
         }
-        #endregion
+
+        #endregion Constructor
     }
 }

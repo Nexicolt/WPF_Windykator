@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.ComponentModel;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Windykator_PRO.View
 {
@@ -24,6 +12,13 @@ namespace Windykator_PRO.View
         {
             InitializeComponent();
         }
-    }
 
+        private void OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyDescriptor is PropertyDescriptor descriptor)
+            {
+                e.Column.Header = descriptor.DisplayName ?? descriptor.Name;
+            }
+        }
+    }
 }

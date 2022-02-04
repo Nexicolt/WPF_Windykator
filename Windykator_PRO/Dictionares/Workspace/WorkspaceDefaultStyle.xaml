@@ -1,4 +1,5 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../DarkModeControlsTemplates.xaml" />
@@ -8,7 +9,6 @@
     <Style x:Key="Tab_MainGrid" TargetType="Grid">
         <Setter Property="Margin" Value="20,10,20,0" />
     </Style>
-
 
     <!--  ///////////////////////////////////////////  -->
     <!--  ///////////////// TOLBAR //////////////////  -->
@@ -71,9 +71,38 @@
         <Setter Property="Foreground" Value="#FFFFFF" />
         <Setter Property="Background" Value="#515151" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Padding" Value="10,0,0,0" />
+        <Setter Property="Margin" Value="0,0,15,0" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Height" Value="25" />
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AdornedElementPlaceholder Name="customAdorner"
+                                                       Grid.Column="0"
+                                                       VerticalAlignment="Center" />
+                        <Border Grid.Column="1"
+                                    Width="20"
+                                    Height="20"
+                                    Margin="5,0,0,0"
+                                    Background="Red"
+                                    CornerRadius="10"
+                                    ToolTip="{Binding ElementName=customAdorner,
+                                                      Path=AdornedElement.(Validation.Errors).CurrentItem.ErrorContent}">
+                            <TextBlock HorizontalAlignment="center"
+                                           VerticalAlignment="center"
+                                           FontWeight="Bold"
+                                           Foreground="white"
+                                           Text="!" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <!--  Styl dla inputa, z któego można wskazywać z listy  -->
@@ -81,7 +110,9 @@
         x:Key="ComboBoxDark"
         BasedOn="{StaticResource ComboBoxDarkMode}"
         TargetType="{x:Type ComboBox}">
+        <Setter Property="Margin" Value="0,0,15,0" />
         <Setter Property="Height" Value="25" />
+        
     </Style>
 
     <!--  Styl dla elementu listy z ComboBox'a  -->
@@ -116,7 +147,6 @@
         <Setter Property="Margin" Value="0,0,20,0" />
     </Style>
 
-
     <!--  ///////////////////////////////////////////  -->
     <!--  ////////////////// TABELA /////////////////  -->
     <!--  ///////////////////////////////////////////  -->
@@ -140,7 +170,4 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="FontSize" Value="13" />
     </Style>
-
-
-
 </ResourceDictionary>

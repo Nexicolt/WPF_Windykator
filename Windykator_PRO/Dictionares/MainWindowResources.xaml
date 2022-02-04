@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:vm="clr-namespace:Windykator_PRO.ViewModel"
-    xmlns:vw="clr-namespace:Windykator_PRO.View">
+    xmlns:vw="clr-namespace:Windykator_PRO.View"
+    xmlns:vm="clr-namespace:Windykator_PRO.ViewModel">
 
     <!--  tu łączymy VM z V  -->
     <DataTemplate DataType="{x:Type vm:ClientsViewModel}">
@@ -15,8 +15,24 @@
         <vw:IssuesView />
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:AddNewDocumentViewModel}">
+        <vw:AddNewDocumentView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AllDocumentsViewModel}">
+        <vw:AllDocumentsView />
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type vm:AddNewClientViewModel}">
         <vw:AddNewClientView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:EditClientViewModel}">
+        <vw:EditClientView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:EditDebtorViewModel}">
+        <vw:EditDebtorView />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:AddNewDebtorViewModel}">
@@ -34,5 +50,4 @@
     <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
         <vw:SettingsView />
     </DataTemplate>
-
 </ResourceDictionary>

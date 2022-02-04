@@ -5,7 +5,6 @@ using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
-
 namespace Windykator_PRO
 {
     /// <summary>
@@ -13,7 +12,6 @@ namespace Windykator_PRO
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
@@ -22,6 +20,7 @@ namespace Windykator_PRO
         /**
          * Funkcja od chwytania okna i jego prenoszenia
          */
+
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -33,31 +32,32 @@ namespace Windykator_PRO
         /**
          * Funkcja wywoływana, przy wciśnięciu 'X'
          */
-        private void CloseApplication(object sender, RoutedEventArgs e) { Close(); }
+
+        private void CloseApplication(object sender, RoutedEventArgs e)
+        { Close(); }
+
         /**
         * Funkcja wywoływana, przy wciśnięciu '-'
         */
-        private void MinimizeApplication(object sender, RoutedEventArgs e) { WindowState = WindowState.Minimized; }
 
+        private void MinimizeApplication(object sender, RoutedEventArgs e)
+        { WindowState = WindowState.Minimized; }
 
         /**
         * Funkcja wywoływana, przy wciśnięciu przycisku maksymalizacji okna
         */
-        private void MaximizeApplication(object sender, RoutedEventArgs e) {
-            if (WindowState == WindowState.Maximized) WindowState = WindowState.Normal;
-            else  WindowState = WindowState.Maximized;
 
+        private void MaximizeApplication(object sender, RoutedEventArgs e)
+        {
+            if (WindowState == WindowState.Maximized) WindowState = WindowState.Normal;
+            else WindowState = WindowState.Maximized;
         }
 
         //Funkcja odpowiedzlana za zwijanie/rozwijanie lewego menu
         private void Hide_Show_Menu(object sender, RoutedEventArgs e)
         {
-
-            
-
             if (LeftMenu.ActualWidth == 70)
             {
-
                 DoubleAnimation myDoubleAnimation = new DoubleAnimation();
                 myDoubleAnimation.From = 70;
                 myDoubleAnimation.To = 170;
@@ -72,12 +72,10 @@ namespace Windykator_PRO
                 myDoubleAnimation.Completed += (s, ew) =>
                 {
                     LeftMenu.HorizontalAlignment = HorizontalAlignment.Stretch;
-                    
                 };
             }
             else
             {
-
                 DoubleAnimation myDoubleAnimation = new DoubleAnimation();
                 myDoubleAnimation.From = LeftMenu.ActualWidth;
                 myDoubleAnimation.To = 70;
@@ -89,11 +87,7 @@ namespace Windykator_PRO
                 LeftMenu.HorizontalAlignment = HorizontalAlignment.Left;
 
                 Hide_Show_Menu_button_image.Source = new BitmapImage(new Uri(@"/Icons/Menu/show_menu.png", UriKind.Relative));
-
-
-
             }
-          
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿<UserControl
     x:Class="Windykator_PRO.View.IssuesView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:Windykator_PRO.View"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
@@ -19,7 +18,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
 
         <ToolBar Grid.Row="0" Style="{StaticResource ToolbarStyle}">
             <Button Command="{Binding CreateIssueCommand}" Style="{StaticResource ToolbarButton}">
@@ -53,7 +51,6 @@
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Exportuj" />
                 </StackPanel>
             </Button>
-
         </ToolBar>
 
         <Expander
@@ -153,7 +150,6 @@
                             Content="Firma"
                             Style="{StaticResource StandardRadioButton}" />
                     </Grid>
-
                 </Grid>
 
                 <Grid Grid.Row="8" Grid.ColumnSpan="3">
@@ -188,7 +184,6 @@
                             Style="{StaticResource StandardCheckBox}" />
                     </Grid>
                 </Grid>
-
             </Grid>
         </Expander>
 
@@ -205,8 +200,6 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="70" />
                 </Grid.RowDefinitions>
-
-
 
                 <DataGrid
                     Name="IssuesDataGrid"
@@ -236,8 +229,6 @@
                         <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status" />
                         <DataGridTextColumn Binding="{Binding Path=Kwota}" Header="Kwota" />
                     </DataGrid.Columns>
-
-
                 </DataGrid>
 
                 <Grid Grid.Row="1" Width="700">
@@ -269,7 +260,6 @@
                     </Button>
                 </Grid>
             </Grid>
-
         </Expander>
     </Grid>
 </UserControl>

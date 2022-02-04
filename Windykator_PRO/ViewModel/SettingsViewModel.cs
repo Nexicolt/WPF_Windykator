@@ -1,7 +1,6 @@
-﻿
-namespace Windykator_PRO.ViewModel
+﻿namespace Windykator_PRO.ViewModel
 {
-    class SettingsViewModel : WorkspaceViewModel
+    internal class SettingsViewModel : WorkspaceViewModel
     {
         public SettingsViewModel()
         {

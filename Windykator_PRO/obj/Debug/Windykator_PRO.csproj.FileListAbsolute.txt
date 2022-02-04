@@ -1,82 +1,123 @@
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.exe.config
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.exe
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.pdb
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csprojAssemblyReference.cache
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\DarkModeControlsTemplates.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\TopBarDictionary.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\MainWindow.g.cs
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\App.g.cs
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.cache
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.lref
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\MainWindow.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.g.resources
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.Properties.Resources.resources
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.GenerateResource.cache
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.CoreCompileInputs.cache
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.exe
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.pdb
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\LeftMenuDictionary.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\ClientsDictionary.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Clients.g.cs
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Clients.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\CenterOfAppDictionary.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\IssuesDictionary.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Issues.g.cs
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Issues.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\DebtorsDictionary.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Debtors.g.cs
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\UserControls\Debtors.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\LoginFormDictionary.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\LoginForm.g.cs
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\LoginForm.baml
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\helpWindow.g.cs
-C:\Users\nexic\source\repos\Windykator_PRO\Windykator_PRO\obj\Debug\helpWindow.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.exe.config
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.exe
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\bin\Debug\Windykator_PRO.pdb
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.AssemblyReference.cache
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\CenterOfAppDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\DarkModeControlsTemplates.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\LeftMenuDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\LoginFormDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\TopBarDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\App.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.cache
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.lref
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.g.resources
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.Properties.Resources.resources
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.GenerateResource.cache
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.CoreCompileInputs.cache
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.exe
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Windykator_PRO.pdb
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\LoginForm.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\MainWindow.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\LoginForm.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\MainWindow.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\ClientsView.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\ClientsView.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\MainWindowResources.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\DebtorsView.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\IssuesView.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\DebtorsView.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\IssuesView.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewClientView.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewClientView.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewDebtorView.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewDebtorView.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewIssueView.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\AddNewIssueView.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\IssuesDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\WorkspaceDefaultStyle.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\ClientsDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\DebtorsDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\AddNewIssueDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\AddNewDebtorDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\AddNewClientDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\ImportOptionDictionary.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\ImportOptionView.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\ImportOptionView.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\SettingsView.g.cs
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\View\SettingsView.baml
-C:\Users\nexic\Kod źródłowy\C#\Windykator_PRO\Windykator_PRO\obj\Debug\Dictionares\Workspace\SettingsDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Windykator_PRO.exe.config
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Windykator_PRO.exe
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Windykator_PRO.pdb
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\CommonServiceLocator.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\EntityFramework.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Buffers.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Memory.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.ValueTuple.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\ToggleSwitch.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\EntityFramework.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Identity.Core.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Buffers.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Memory.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\System.ValueTuple.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\AddNewIssueDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\AddNewDebtorDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\AddNewClientDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\DebtorsDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\ClientsDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\DarkModeControlsTemplates.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\ImportOptionDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\IssuesDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\LeftMenuDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\LoginFormDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\TopBarDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\SettingsDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\Workspace\WorkspaceDefaultStyle.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\EditDebtorView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\EditClientView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AddNewClientView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AddNewDebtorView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\ClientsView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\DebtorsView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\IssuesView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\LoginForm.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\MainWindow.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AddNewDocumentView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AllDocumentsView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\EditDebtorView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\EditClientView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AddNewClientView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AddNewDebtorView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AddNewIssueView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\ClientsView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\DebtorsView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\ImportOptionView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\IssuesView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\LoginForm.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\MainWindow.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\NewDocument\AskForProductQuantityWIndow.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\SettingsView.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\App.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.cache
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO_MarkupCompile.lref
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\CenterOfAppDictionary.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Dictionares\MainWindowResources.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AddNewDocumentView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AllDocumentsView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\AddNewIssueView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\ImportOptionView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\NewDocument\AskForProductQuantityWIndow.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\SettingsView.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.g.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.InitialCreate.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.Tabelazklientami.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.WidokKlientow.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.WidokDogrida.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.WidokDogrida2.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.ExtractAdress.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.PaymentandCurrency.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.Customerviewforgrid.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.Baseissuesmodel.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.debtors.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.debtors2.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.debtors3.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.Dodaniedokumentów.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.DOkumenty.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.Typdokumentu.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.usługi.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Properties.Resources.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.GenerateResource.cache
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.CoreCompileInputs.cache
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.CopyComplete
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.exe
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.pdb

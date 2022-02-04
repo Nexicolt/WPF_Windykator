@@ -1,27 +1,27 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Windykator_PRO.Helpers;
 
 namespace Windykator_PRO.ViewModel
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         #region DisplayName
+
         //Nazwa zakładki
         public virtual string DisplayName { get; protected set; }
+
         //SRC do ikony
         public virtual string iconPath { get; protected set; }
+
         //SRC do niebieskiej ikony (aktywowanej gdy "OnMouseOver")
         public virtual string iconPathClicked { get; protected set; }
-        #endregion
+
+        #endregion DisplayName
+
         #region WindowPropertes
 
         public ICommand Close
@@ -86,7 +86,7 @@ namespace Windykator_PRO.ViewModel
             }
         }
 
-        #endregion
+        #endregion WindowPropertes
 
         #region Propertychanged
 
@@ -115,6 +115,6 @@ namespace Windykator_PRO.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+        #endregion Propertychanged
     }
 }

@@ -1,45 +1,59 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
+using System.Windows;
 using System.Windows.Input;
 using Windykator_PRO.Helpers;
 
 namespace Windykator_PRO.ViewModel
 {
-    public abstract class WorkspaceViewModel:BaseViewModel
+    public abstract class WorkspaceViewModel : BaseViewModel
     {
         #region Constructor
+
         public WorkspaceViewModel()
         {
-
         }
-        #endregion
+
+        #endregion Constructor
 
         #region CloseCommand
+
         //Komenda, powiązana z zamykaniem zakładki
         private BaseCommand _CloseCommand;
 
-        /**
-         * Metoda wywoływana przy zamykaniu zakładki
-         */
         public ICommand CloseCommand
         {
             get
             {
                 if (_CloseCommand == null)
-                    _CloseCommand = new BaseCommand(()=>this.OnRequestClose());
+                    _CloseCommand = new BaseCommand(() => this.OnRequestClose());
                 return _CloseCommand;
             }
         }
 
-        #endregion
+        #endregion CloseCommand
 
         #region Helpers
+
         public event EventHandler RequestClose;
-        private void OnRequestClose()
+
+        protected void OnRequestClose()
         {
             EventHandler handler = this.RequestClose;
             if (handler != null)
                 handler(this, EventArgs.Empty);
         }
-        #endregion
+
+        protected void ShowErrorMessageBox(string message)
+        {
+            MessageBox.Show(message, "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        protected void SendRefreshSignal()
+        {
+            Messenger.Default.Send("REFRESH");
+        }
+
+        #endregion Helpers
     }
 }

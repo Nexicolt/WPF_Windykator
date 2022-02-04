@@ -1,11 +1,11 @@
 ﻿<UserControl
     x:Class="Windykator_PRO.View.AddNewClientView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:Windykator_PRO.View"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     MinWidth="500"
+
     mc:Ignorable="d">
 
     <UserControl.Resources>
@@ -47,8 +47,9 @@
             <TextBox
                 Grid.Column="2"
                 Grid.ColumnSpan="6"
-                Style="{StaticResource TextBoxDark}" />
-
+                Style="{StaticResource TextBoxDark}"
+                Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=Name,
+                    ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
             <TextBlock
                 Grid.Row="2"
@@ -57,7 +58,9 @@
             <TextBox
                 Grid.Row="2"
                 Grid.Column="2"
-                Style="{StaticResource TextBoxDark}" />
+                Style="{StaticResource TextBoxDark}"
+                 Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=City,
+                    ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
             <TextBlock
                 Grid.Row="2"
@@ -67,7 +70,9 @@
             <TextBox
                 Grid.Row="2"
                 Grid.Column="6"
-                Style="{StaticResource TextBoxDark}" />
+                Style="{StaticResource TextBoxDark}"
+                 Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=Street,
+                    ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
             <Grid Grid.Row="4" Grid.ColumnSpan="3">
                 <Grid.ColumnDefinitions>
@@ -88,13 +93,13 @@
                         <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <RadioButton Content="Osoba fizyczna" Style="{StaticResource StandardRadioButton}" />
+                    <RadioButton Content="Osoba fizyczna" Style="{StaticResource StandardRadioButton}" IsChecked="{Binding Path=IsIndyvidual, UpdateSourceTrigger=PropertyChanged}" />
                     <RadioButton
                         Grid.Column="2"
                         Content="Firma"
+                        IsChecked="{Binding Path=IsCompany,  UpdateSourceTrigger=PropertyChanged}"
                         Style="{StaticResource StandardRadioButton}" />
                 </Grid>
-
             </Grid>
 
             <Grid
@@ -119,13 +124,13 @@
                         <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <RadioButton Content="Tak" Style="{StaticResource StandardRadioButton}" />
+                    <RadioButton Content="Tak" Style="{StaticResource StandardRadioButton}" IsChecked="{Binding Path=IsForeignCustomer,  UpdateSourceTrigger=PropertyChanged}" />
                     <RadioButton
                         Grid.Column="2"
                         Content="Nie"
-                        Style="{StaticResource StandardRadioButton}" />
+                        Style="{StaticResource StandardRadioButton}"
+                        IsChecked="{Binding Path=IsLocalCustomer,  UpdateSourceTrigger=PropertyChanged}" />
                 </Grid>
-
             </Grid>
 
             <TextBlock
@@ -136,7 +141,9 @@
             <TextBox
                 Grid.Row="6"
                 Grid.Column="2"
-                Style="{StaticResource TextBoxDark}" />
+                Style="{StaticResource TextBoxDark}"
+                 Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=BankName,
+                    ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
             <TextBlock
                 Grid.Row="6"
@@ -146,8 +153,9 @@
             <TextBox
                 Grid.Row="6"
                 Grid.Column="6"
-                Style="{StaticResource TextBoxDark}" />
-
+                Style="{StaticResource TextBoxDark}"
+                 Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=IBAN,
+                    ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
             <TextBlock
                 Grid.Row="8"
@@ -158,8 +166,9 @@
                 Grid.Row="8"
                 Grid.Column="2"
                 Grid.ColumnSpan="6"
-                Style="{StaticResource TextBoxDark}" />
-
+                Style="{StaticResource TextBoxDark}"
+                 Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=BankAccountNumber,
+                    ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
         </Grid>
 
         <Grid Grid.Row="2">
@@ -184,16 +193,13 @@
                 <CheckBox Content="Otwóz okno dowiązywania dłużnika, po utworzeniu klienta" Style="{StaticResource StandardCheckBox}" />
                 <TextBlock />
                 <CheckBox Content="Zainicjalizuj klienta, jako nierzetelnego" Style="{StaticResource StandardCheckBox}" />
-
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="2">
-                <Button Content="Dodaj klienta" Style="{StaticResource StandardButton}" />
+                <Button Content="Dodaj klienta" Style="{StaticResource StandardButton}" Command="{Binding SaveCustomer}" />
                 <TextBlock />
                 <Button Content="Anuluj" Style="{StaticResource StandardButton}" />
             </StackPanel>
-
         </Grid>
     </Grid>
-
 </UserControl>
