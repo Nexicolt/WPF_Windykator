@@ -219,6 +219,10 @@
     <Compile Include="Migrations\202202041732408_usługi.designer.cs">
       <DependentUpon>202202041732408_usługi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202061505061_x.cs" />
+    <Compile Include="Migrations\202202061505061_x.designer.cs">
+      <DependentUpon>202202061505061_x.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Validation\DocumentValidator.cs" />
     <Compile Include="Validation\StringValidator.cs" />
@@ -471,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202041732408_usługi.resx">
       <DependentUpon>202202041732408_usługi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202061505061_x.resx">
+      <DependentUpon>202202061505061_x.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

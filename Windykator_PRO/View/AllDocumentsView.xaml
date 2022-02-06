@@ -24,7 +24,7 @@
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Dodaj dokument" />
                 </StackPanel>
             </Button>
-            <Button Style="{StaticResource ToolbarButton}" Command="{Binding DeleteDOcumentCommand, UpdateSourceTrigger=PropertyChanged}">
+            <Button Style="{StaticResource ToolbarButton}" Command="{Binding DeleteDocumentCommand, UpdateSourceTrigger=PropertyChanged}">
                 <StackPanel>
                     <Image Source="/Icons/Documents/remove_document.png" Style="{StaticResource ToolbarButtonImage}" />
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Usuń dokument" />

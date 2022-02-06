@@ -53,6 +53,7 @@ namespace Windykator_PRO.ViewModel
         {
             Messenger.Default.Send("REFRESH");
         }
+        protected virtual bool IsValid() => true;
 
         #endregion Helpers
     }

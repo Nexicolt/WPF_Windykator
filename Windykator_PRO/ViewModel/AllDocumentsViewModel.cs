@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using Windykator_PRO.Database;
+using Windykator_PRO.Helpers;
 
 namespace Windykator_PRO.ViewModel
 {
@@ -26,22 +27,61 @@ namespace Windykator_PRO.ViewModel
         }
 
         public ICommand AddNewDocumentCommand { get => MainWindowViewModel.MainWindowHandler.CreateDocumentCommand; }
+        public ICommand DeleteDocumentCommand { get => new BaseCommand(() => DeleteDocument()); }
 
         public string SearchCriteria_DocNo { get; set; }
         public string SearchCriteria_DocType { get; set; }
         public string SearchCriteria_Author { get; set; }
 
-        public List<string> AuthorsForCombobox { get => db.User.Where(x => x.IsEnable).Select(x=>x.Login).ToList(); }
+        public List<string> AuthorsForCombobox { get => db.User.Where(x => x.IsEnable).Select(x => x.Login).ToList(); }
 
         public List<string> DocumentTypesForCombobox { get => db.DocumentType.Where(x => x.IsEnable).Select(x => x.Name).ToList(); }
 
-        public int SelectedItemOnGrid { get; set; }
+        public DocumentGridView SelectedItemOnGrid { get; set; }
+
+        private void DeleteDocument()
+        {
+            if (SelectedItemOnGrid is null)
+            {
+                ShowErrorMessageBox("Wskaż element na liście");
+                return;
+            }
+
+
+            var documentHeader = db.DocumentHeader.Where(row => row.IsEnable && row.InternalNo == SelectedItemOnGrid.DocNo).FirstOrDefault();
+            if (db.DocumentHeader is null)
+            {
+                ShowErrorMessageBox("Dokument nie istnieje");
+                return;
+            }
+
+            bool attachToIssue = db.DocumentToIssue.Where(row => row.DocumentHeader.Id == documentHeader.Id).Count() > 0;
+            if (attachToIssue)
+            {
+                ShowErrorMessageBox("Dokument jest podpięty pod sprawę. Usunięcie niemożliwe");
+                return;
+            }
+
+            //Usuń pozycje
+            foreach (var documentPosotion in db.DocumentItem.Where(row => row.DocumentHeader.Id == documentHeader.Id))
+            {
+                documentPosotion.Delete();
+            }
+
+            documentHeader.Delete();
+
+            db.SaveChanges();
+            GridList.Remove(SelectedItemOnGrid);
+
+
+
+        }
         protected override void LoadGridData()
         {
             GridList = new System.Collections.ObjectModel.ObservableCollection<DocumentGridView>(db.DocumentHeader.Where(x => x.IsEnable).Select(row => new DocumentGridView
             {
                 DocNo = row.InternalNo,
-                DocType = row.DocumentTy.Name,
+                DocType = row.DocumentType.Name,
                 Author = row.Author.Login,
                 CreateDate = (DateTime)row.CreateDate
             }).ToList());
@@ -49,7 +89,26 @@ namespace Windykator_PRO.ViewModel
 
         protected override void Search()
         {
-            throw new System.NotImplementedException();
+            var baseQuery = db.DocumentHeader.Where(row => row.IsEnable);
+            if (!string.IsNullOrEmpty(SearchCriteria_DocNo))
+            {
+                baseQuery = baseQuery.Where(x => x.InternalNo.ToLower().Contains(SearchCriteria_DocNo.ToLower()));
+            }
+            if (!string.IsNullOrEmpty(SearchCriteria_DocType))
+            {
+                baseQuery = baseQuery.Where(row => row.DocumentType.Name == SearchCriteria_DocType);
+            }
+            if (!string.IsNullOrEmpty(SearchCriteria_Author))
+            {
+                baseQuery = baseQuery.Where(row => row.Author.Login == SearchCriteria_Author);
+            }
+            GridList = new System.Collections.ObjectModel.ObservableCollection<DocumentGridView>(baseQuery.Select(row => new DocumentGridView
+            {
+                DocNo = row.InternalNo,
+                DocType = row.DocumentType.Name,
+                Author = row.Author.Login,
+                CreateDate = (DateTime)row.CreateDate
+            }).ToList());
         }
     }
 }

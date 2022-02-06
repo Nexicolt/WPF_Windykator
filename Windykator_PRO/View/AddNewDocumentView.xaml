@@ -56,6 +56,18 @@
                         ItemsSource="{Binding Path=DocumentTypesForCombobox}"
                         Style="{StaticResource ComboBoxDark}" />
 
+            <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="4"
+                        Style="{StaticResource StandardTextBlock}"
+                        Text="Waluta:" />
+            <ComboBox
+                        Grid.Row="2"
+                        Grid.Column="6"
+                        SelectedValue="{Binding Path=Currency,   ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                        ItemsSource="{Binding Path=CurrencyForCombobox}"
+                        Style="{StaticResource ComboBoxDark}" />
+
         </Grid>
 
        
@@ -196,9 +208,9 @@
                         </Style>
                     </DataGrid.Resources>
                 </DataGrid>
-                
-                
 
+
+                <Button Grid.Row="2" Content="Dodaj dokument" Style="{StaticResource StandardButton}" Command="{ Binding AddDocumentCommand}"/>
             </Grid>
         </Grid>
     </Grid>

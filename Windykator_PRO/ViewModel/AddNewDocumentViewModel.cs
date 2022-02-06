@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Windykator_PRO.Database;
+using Windykator_PRO.Database.Models;
 using Windykator_PRO.Helpers;
 using Windykator_PRO.Validation;
 using Windykator_PRO.View.NewDocument;
@@ -54,7 +55,58 @@ namespace Windykator_PRO.ViewModel
         public ICommand RemoveAddedPositionCommand { get => new BaseCommand(() => RemoveAddedPosition()); }
 
         public ICommand SearchCommand { get => new BaseCommand(() => Search()); }
+        public ICommand AddDocumentCommand { get => new BaseCommand(() => AddDocument()); }
 
+
+        private void AddDocument()
+        {
+            if (!IsValid())
+            {
+                ShowErrorMessageBox("Na formularzu znajduja sie błędy");
+                return;
+            }
+
+            bool documentNoAlreadyExist = db.DocumentHeader.Where(row => row.InternalNo == DocNo).Count() > 0;
+            if (documentNoAlreadyExist)
+            {
+                ShowErrorMessageBox("Dokument o takim numerze już istnieje");
+                return;
+            }
+
+            var currency = db.Currency.Where(row => row.IsEnable && row.Name == Currency).FirstOrDefault();
+            var docType = db.DocumentType.Where(row => row.IsEnable && row.Name == DocType).FirstOrDefault();
+            var documentHeader = new DocumentHeader { DocumentType = docType, Currency = currency, InternalNo = DocNo };
+
+            foreach (var assortment in AssortmentsOnDocumentGridList)
+            {
+                if (assortment.Type == "Asortyment")
+                {
+                    var assortmentDto = db.Assortment.Where(row => row.Name == assortment.Name).FirstOrDefault();
+                    if (assortmentDto != null)
+                    {
+                        var documentItemDto = new DocumentItem { Assortment = assortmentDto, Quantity = assortment.Quantity, DocumentHeader = documentHeader };
+                        db.DocumentItem.Add(documentItemDto);
+                    }
+                }
+                else
+                {
+                    var serviceDto = db.Service.Where(row => row.Name == assortment.Name).FirstOrDefault();
+                    if (serviceDto != null)
+                    {
+                        var documentItemDto = new DocumentItem { Service = serviceDto, Quantity = assortment.Quantity, DocumentHeader = documentHeader };
+                        db.DocumentItem.Add(documentItemDto);
+                    }
+                }
+            }
+
+            db.DocumentHeader.Add(documentHeader);
+            db.SaveChanges();
+            OnRequestClose();
+            SendRefreshSignal();
+
+
+
+        }
 
         public decimal AssortmentQuantity { get; set; }
         public AddNewDocumentViewModel()
@@ -187,6 +239,7 @@ namespace Windykator_PRO.ViewModel
 
         public string DocNo { get; set; }
         public string DocType { get; set; }
+        public string Currency { get; set; }
         public string Author { get; set; }
 
         public string SearchCriteria_AssortmentName { get; set; }
@@ -209,6 +262,18 @@ namespace Windykator_PRO.ViewModel
                 if (_DocumentTypesForCombobox == null)
                     _DocumentTypesForCombobox = db.DocumentType.Where(x => x.IsEnable).Select(x => x.Name).ToList();
                 return _DocumentTypesForCombobox;
+            }
+        }
+
+        private List<string> _CurrencyForCombobox;
+
+        public List<string> CurrencyForCombobox
+        {
+            get
+            {
+                if (_CurrencyForCombobox is null)
+                    _CurrencyForCombobox = db.Currency.Where(row => row.IsEnable).Select(row => row.Name).ToList();
+                return _CurrencyForCombobox;
             }
         }
 
@@ -235,12 +300,23 @@ namespace Windykator_PRO.ViewModel
                     case "DocType":
                         result = StringValidator.IsEmpty(DocType);
                         break;
+                    case "Currency":
+                        result = StringValidator.IsEmpty(Currency);
+                        break;
                 }
 
                 return result;
             }
         }
 
-        public string Error => null;
+        protected override bool IsValid()
+        {
+            return (this["DocNo"] == null
+                        && this["DocType"] == null
+                        && this["Currency"] == null
+                    );
+        }
+
+        public string Error { get; set; }
     }
 }
