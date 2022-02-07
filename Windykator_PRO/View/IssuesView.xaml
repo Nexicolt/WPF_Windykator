@@ -84,37 +84,57 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Style="{StaticResource StandardTextBlock}" Text="Data od:" />
-                <DatePicker Grid.Column="2" Style="{StaticResource DatePickerDark}" />
+                <DatePicker Grid.Column="2" Style="{StaticResource DatePickerDark}"  SelectedDate="{Binding Path=SearchCriteria_DateFrom}"/>
 
                 <TextBlock
                     Grid.Column="4"
                     Style="{StaticResource StandardTextBlock}"
                     Text="Data do:" />
-                <DatePicker Grid.Column="6" Style="{StaticResource DatePickerDark}" />
+                <DatePicker Grid.Column="6" Style="{StaticResource DatePickerDark}" SelectedDate="{Binding Path=SearchCriteria_DateTo}" />
 
                 <TextBlock
                     Grid.Row="2"
                     Style="{StaticResource StandardTextBlock}"
                     Text="Dłużnik:" />
-                <ComboBox
+                <Grid
                     Grid.Row="2"
-                    Grid.Column="2"
-                    Style="{StaticResource ComboBoxDark}">
-                    <ComboBoxItem Style="{StaticResource ComboBoxItemDark}">WSB-NLU</ComboBoxItem>
-                </ComboBox>
+                        Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox
+                       Grid.Column="0"
+                        IsReadOnly="True"
+                        Text="{Binding Path=SearchCriteria_Debtor}"
+                        Style="{StaticResource TextBoxDark}" />
+
+                    <Button  Grid.Column="2" Width="20" Content="..." HorizontalContentAlignment="Center" Command="{Binding SelectDebtorModalCommand}"/>
+                </Grid>
+               
 
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="4"
                     Style="{StaticResource StandardTextBlock}"
                     Text="Wierzyciel:" />
-                <ComboBox
+                <Grid
                     Grid.Row="2"
-                    Grid.Column="6"
-                    Style="{StaticResource ComboBoxDark}">
-                    <ComboBoxItem Style="{StaticResource ComboBoxItemDark}">Sąd okregowy</ComboBoxItem>
-                </ComboBox>
+                        Grid.Column="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
 
+                    <TextBox
+                       Grid.Column="0"
+                        IsReadOnly="True"
+                        Text="{Binding Path=SearchCriteria_Client}"
+                        Style="{StaticResource TextBoxDark}" />
+
+                    <Button  Grid.Column="2" Width="20" Content="..." HorizontalContentAlignment="Center" Command="{Binding SelectClientModalCommand}"/>
+                </Grid>
                 <TextBlock
                     Grid.Row="4"
                     Grid.Column="0"
@@ -123,7 +143,7 @@
                 <TextBox
                     Grid.Row="4"
                     Grid.Column="2"
-                    Style="{StaticResource TextBoxDark}" />
+                    Style="{StaticResource TextBoxDark}"  Text="{Binding Path=SearchCriteria_InternalNo}"/>
 
                 <Grid Grid.Row="6" Grid.ColumnSpan="3">
                     <Grid.ColumnDefinitions>
@@ -144,11 +164,11 @@
                             <ColumnDefinition Width="20" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <RadioButton Content="Osoba fizyczna" Style="{StaticResource StandardRadioButton}" />
+                        <RadioButton Content="Osoba fizyczna" Style="{StaticResource StandardRadioButton}" IsChecked="{Binding Path=SearchCriteria_IsIndyvidualCustomer, Mode=OneWay}" />
                         <RadioButton
                             Grid.Column="2"
                             Content="Firma"
-                            Style="{StaticResource StandardRadioButton}" />
+                            Style="{StaticResource StandardRadioButton}" IsChecked="{Binding Path=SearchCriteria_IsCompany}"  />
                     </Grid>
                 </Grid>
 
@@ -175,13 +195,13 @@
                             Grid.Row="6"
                             Grid.Column="0"
                             Content="Zakończona"
-                            Style="{StaticResource StandardCheckBox}" />
+                            Style="{StaticResource StandardCheckBox}" IsChecked="{Binding Path=SearchCriteria_IsFinished}"  />
 
                         <CheckBox
                             Grid.Row="8"
                             Grid.Column="2"
                             Content="W toku"
-                            Style="{StaticResource StandardCheckBox}" />
+                            Style="{StaticResource StandardCheckBox}" IsChecked="{Binding Path=SearchCriteria_IsDuring}"  />
                     </Grid>
                 </Grid>
             </Grid>
@@ -240,22 +260,9 @@
                         <ColumnDefinition Width="3*" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Style="{StaticResource StandardButton}">
+                    <Button Grid.Column="2" Style="{StaticResource StandardButton}" Command="{Binding SearchCommand}">
                         <StackPanel>
-                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Szczegóły" />
-                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="sprawy" />
-                        </StackPanel>
-                    </Button>
-                    <Button Grid.Column="2" Style="{StaticResource StandardButton}">
-                        <StackPanel>
-                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Dane" />
-                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="dłużnika" />
-                        </StackPanel>
-                    </Button>
-                    <Button Grid.Column="4" Style="{StaticResource StandardButton}">
-                        <StackPanel>
-                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Dane" />
-                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="wierzyciela" />
+                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Szukaj" />
                         </StackPanel>
                     </Button>
                 </Grid>

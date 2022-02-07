@@ -70,6 +70,23 @@ namespace Windykator_PRO.ViewModel
             Create(new EditClientViewModel(customerId));
         }
 
+
+        public ICommand DebtorsToSelectModalCommand
+        {
+            get
+            {
+                return new BaseCommand(() => ShowDebtorsModal());
+            }
+        }
+
+        public ICommand ClientsToSelectModalCommand
+        {
+            get
+            {
+                return new BaseCommand(() => ShowClientsModal());
+            }
+        }
+
         public void EditDebtorCommand(long customerId)
         {
             Create(new EditDebtorViewModel(customerId));
@@ -112,6 +129,15 @@ namespace Windykator_PRO.ViewModel
 
         #region Commands
 
+
+        private void ShowClientsModal()
+        {
+            Create(new ClientsViewModel(true));
+        }
+        private void ShowDebtorsModal()
+        {
+            Create(new DebtorsViewModel(true));
+        }
         //Kolekcja, zawierająca wszystkie funkcje
         public ReadOnlyCollection<CommandViewModel> Commands
         {

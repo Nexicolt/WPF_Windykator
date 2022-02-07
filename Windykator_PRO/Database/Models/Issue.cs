@@ -10,5 +10,9 @@ namespace Windykator_PRO.Database.Models
         public virtual Customer Customer { get; set; }
 
         public virtual Debtor Debtor { get; set; }
+
+        public decimal Cost { get; set; }
+
+        public bool IsFinished { get; set; }
     }
 }

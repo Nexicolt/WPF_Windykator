@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using Windykator_PRO.Database;
 using Windykator_PRO.Helpers;
@@ -10,7 +12,7 @@ namespace Windykator_PRO.ViewModel
     /// <summary>
     /// Reprezentant wiersza, w gridzie
     /// </summary>
-    internal class CustomerGridDto
+    public class CustomerGridDto
     {
         public long Id { get; set; }
         public string Name { get; set; }
@@ -30,16 +32,19 @@ namespace Windykator_PRO.ViewModel
 
         private VindicationDatabase db = null;
 
-        public ClientsViewModel()
+        public ClientsViewModel(bool toSelectClient=false)
         {
             base.DisplayName = "Klienci";
             db = new VindicationDatabase();
             SearchCriteria_IsIndyvidual = true;
+            SelectClientButtonVisbility = (!toSelectClient) ? Visibility.Hidden : Visibility.Visible;
         }
 
         #endregion Constructor
 
         #region Properties
+
+        public Visibility SelectClientButtonVisbility { get; set; }
 
         public string SearchCriteria_Name { get; set; }
         public string SearchCriteria_City { get; set; }
@@ -102,6 +107,12 @@ namespace Windykator_PRO.ViewModel
             MainWindowViewModel.MainWindowHandler.EditClientCommand(SelectedItemOnGrid.Id);
         }
 
+        public ICommand SelectClientCommand
+        {
+
+            get => new BaseCommand(() => SelectClient());
+        }
+
         public ICommand Import
         {
             get
@@ -117,6 +128,18 @@ namespace Windykator_PRO.ViewModel
 
         #endregion Commands
 
+
+        private void SelectClient()
+        {
+            if (SelectedItemOnGrid is null)
+            {
+                ShowErrorMessageBox("Należy wskazać klienta z listy");
+                return;
+            }
+            Messenger.Default.Send(SelectedItemOnGrid); 
+            OnRequestClose();
+
+        }
         /// <summary>
         /// Lista dla grida
         /// </summary>

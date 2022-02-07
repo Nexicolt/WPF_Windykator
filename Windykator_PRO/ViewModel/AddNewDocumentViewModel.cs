@@ -75,7 +75,8 @@ namespace Windykator_PRO.ViewModel
 
             var currency = db.Currency.Where(row => row.IsEnable && row.Name == Currency).FirstOrDefault();
             var docType = db.DocumentType.Where(row => row.IsEnable && row.Name == DocType).FirstOrDefault();
-            var documentHeader = new DocumentHeader { DocumentType = docType, Currency = currency, InternalNo = DocNo };
+            var author = db.User.Find(GetLoggedUserId());
+            var documentHeader = new DocumentHeader { DocumentType = docType, Currency = currency, InternalNo = DocNo, Author= author };
 
             foreach (var assortment in AssortmentsOnDocumentGridList)
             {

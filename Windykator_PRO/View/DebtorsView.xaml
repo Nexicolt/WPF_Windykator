@@ -281,6 +281,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
                     <Button Style="{StaticResource StandardButton}">
@@ -289,7 +290,12 @@
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="dłużnika" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="1" Style="{StaticResource StandardButton}" Command="{Binding SearchCommand}">
+                    <Button Grid.Column="1" Style="{StaticResource StandardButton}" Visibility="{Binding Path=SelectDebtorButtonVisbility}" Command="{Binding SelectDebtorCommand}">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Wskaż" />
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="2" Style="{StaticResource StandardButton}" Command="{Binding SearchCommand}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Szukaj" />
                         </StackPanel>

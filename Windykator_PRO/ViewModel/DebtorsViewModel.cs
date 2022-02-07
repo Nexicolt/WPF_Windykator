@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using Windykator_PRO.Database;
 using Windykator_PRO.Helpers;
@@ -22,15 +24,18 @@ namespace Windykator_PRO.ViewModel
     {
         private VindicationDatabase db = null;
 
-        public DebtorsViewModel()
+        public DebtorsViewModel(bool selectButton=false)
         {
             this.DisplayName = "Dłużnicy";
             db = new VindicationDatabase();
             SearchCriteria_IsIndyvidual = true;
+            SelectDebtorButtonVisbility = (!selectButton) ? Visibility.Hidden : Visibility.Visible;
+
         }
 
         #region Properties
 
+        public Visibility SelectDebtorButtonVisbility { get; set; }
         public string SearchCriteria_Name { get; set; }
         public string SearchCriteria_City { get; set; }
         public string SearchCriteria_Street { get; set; }
@@ -102,6 +107,23 @@ namespace Windykator_PRO.ViewModel
 
         public ICommand DeleteDebtorCommand { get => new BaseCommand(() => DeleteDebtor()); }
 
+        public ICommand SelectDebtorCommand
+        {
+
+            get => new BaseCommand(() => SelectDebtor());
+        }
+
+        private void SelectDebtor()
+        {
+            if (SelectedItemOnGrid is null)
+            {
+                ShowErrorMessageBox("Należy wskazać klienta z listy");
+                return;
+            }
+            Messenger.Default.Send(SelectedItemOnGrid);
+            OnRequestClose();
+
+        }
         #endregion Commands
 
         /// <summary>

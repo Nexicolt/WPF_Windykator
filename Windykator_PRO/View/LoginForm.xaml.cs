@@ -47,14 +47,17 @@ namespace Windykator_PRO
             string password = this.PasswordInput.Password;
 
             string hashedPassword = Hash(password);
+           
 
-            bool correctloginData = db.User.Where(row => row.Login == login && row.Password == hashedPassword && row.IsEnable).Count() > 0;
-            if (correctloginData)
+            var userDto = db.User.Where(row => row.Login == login && row.Password == hashedPassword && row.IsEnable).FirstOrDefault();
+            if (userDto != null)
             {
                 var mainWindow = new MainWindow();
                 mainWindow.DataContext = new MainWindowViewModel();
                 mainWindow.Show();
                 ErrorPanel.Visibility = Visibility.Collapsed;
+                Application.Current.Resources["User_Login"] = userDto.Login;
+                Application.Current.Resources["User_Id"] = userDto.Id;
                 Close();
             }
             else

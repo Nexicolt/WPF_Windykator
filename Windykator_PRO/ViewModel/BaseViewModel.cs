@@ -24,6 +24,7 @@ namespace Windykator_PRO.ViewModel
 
         #region WindowPropertes
 
+
         public ICommand Close
         {
             get { return new BaseCommand(CloseApplication); }
@@ -85,6 +86,9 @@ namespace Windykator_PRO.ViewModel
                 Application.Current.MainWindow.WindowState = WindowState.Minimized;
             }
         }
+
+        protected long GetLoggedUserId() => long.Parse(Application.Current.Resources["User_Id"].ToString());
+
 
         #endregion WindowPropertes
 
