@@ -27,6 +27,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="10" />
             </Grid.RowDefinitions>
 
             <TextBlock Style="{StaticResource HeaderTextBlock}" Text="Klient" />
@@ -49,14 +51,13 @@
                     <RowDefinition Height="10" />
                     <RowDefinition Height="25" />
                     <RowDefinition Height="10" />
-                    <RowDefinition Height="25" />
-                    <RowDefinition Height="20" />
                     <RowDefinition Height="45" />
-                    <RowDefinition Height="10" />
+                    <RowDefinition Height="20" />
+
                 </Grid.RowDefinitions>
 
                 <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa" />
-                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" IsReadOnly="True" Text="{Binding Customer_Name, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock
                     Grid.Row="2"
@@ -65,45 +66,27 @@
                 <TextBox
                     Grid.Row="2"
                     Grid.Column="2"
+                    IsReadOnly="True"
+                    Text="{Binding Cutomer_Location}"
                     Style="{StaticResource TextBoxDark}" />
 
-                <TextBlock
-                    Grid.Row="4"
-                    Style="{StaticResource StandardTextBlock}"
-                    Text="Należność:" />
-                <TextBox
-                    Grid.Row="4"
-                    Grid.Column="2"
-                    Style="{StaticResource TextBoxDark}" />
+               
 
-                <Grid Grid.Row="6" Grid.ColumnSpan="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="15" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
 
                     <TextBlock
                         Grid.Column="0"
+                        Grid.Row="4"
                         Style="{StaticResource StandardTextBlock}"
                         Text="Waluta:" />
-                    <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+                <ComboBox Grid.Column="2" ItemsSource="{Binding CurrencyForComboBox}"  Grid.Row="4" Style="{StaticResource ComboBoxDark}" SelectedItem="{Binding Currency, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
 
-                    <TextBlock
-                        Grid.Column="4"
-                        Style="{StaticResource StandardTextBlock}"
-                        Text="Klient zagraniczny:" />
-                    <TextBox Grid.Column="6" Style="{StaticResource TextBoxDark}" />
-                </Grid>
+         
 
                 <Button
-                    Grid.Row="8"
+                    Grid.Row="6"
                     Grid.ColumnSpan="4"
                     Content="Wczytaj klienta"
+                    Command="{Binding SelectClientModalCommand}"
                     Style="{StaticResource StandardButton}" />
             </Grid>
 
@@ -124,22 +107,23 @@
                     <RowDefinition Height="10" />
                     <RowDefinition Height="25" />
                     <RowDefinition Height="10" />
-                    <RowDefinition Height="25" />
-                    <RowDefinition Height="20" />
                     <RowDefinition Height="45" />
-                    <RowDefinition Height="10" />
+                    <RowDefinition Height="20" />
                 </Grid.RowDefinitions>
 
                 <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa" />
-                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" IsReadOnly="True" Text="{Binding Debtor_Name, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock
                     Grid.Row="2"
+                    
                     Style="{StaticResource StandardTextBlock}"
                     Text="Lokalizacja:" />
                 <TextBox
                     Grid.Row="2"
                     Grid.Column="2"
+                    IsReadOnly="True"
+                    Text="{Binding Debtor_Location}"
                     Style="{StaticResource TextBoxDark}" />
 
                 <TextBlock
@@ -149,27 +133,30 @@
                 <TextBox
                     Grid.Row="4"
                     Grid.Column="2"
+                    Text="{Binding Debtor_Due, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
                     Style="{StaticResource TextBoxDark}" />
 
-                <Grid Grid.Row="6" Grid.ColumnSpan="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="120" />
-                    </Grid.ColumnDefinitions>
 
-                    <TextBlock
-                        Grid.Column="0"
-                        Style="{StaticResource StandardTextBlock}"
-                        Text="Ilośc spraw:" />
-                    <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
-                </Grid>
 
                 <Button
-                    Grid.Row="8"
+                    Grid.Row="6"
                     Grid.ColumnSpan="4"
                     Content="Wczytaj dłużnika"
-                    Style="{StaticResource StandardButton}" />
+                    Style="{StaticResource StandardButton}" Command="{Binding SelectDebtorModalCommand}"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.ColumnSpan="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Style="{StaticResource StandardTextBlock}"
+                    Text="Numer sprawy:" />
+                <TextBox
+                    Grid.Column="2"
+                    Text="{Binding InternalNo, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource TextBoxDark}" />
             </Grid>
         </Grid>
 
@@ -207,47 +194,34 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Style="{StaticResource StandardTextBlock}" Text="Numer dokumentu:" />
-                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
+                <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" Text="{Binding Path=SearchCriteria_DocNo}" />
 
                 <TextBlock
                     Grid.Column="4"
                     Style="{StaticResource StandardTextBlock}"
                     Text="Typ dokumentu:" />
-                <ComboBox Grid.Column="6" Style="{StaticResource ComboBoxDark}">
-                    <ComboBoxItem Content="Faktura VAT" Style="{StaticResource ComboBoxItemDark}" />
-                    <ComboBoxItem Content="Pismo sądowe" Style="{StaticResource ComboBoxItemDark}" />
-                </ComboBox>
+                <ComboBox Grid.Column="6" Style="{StaticResource ComboBoxDark}" ItemsSource="{Binding Path=DocumentTypeFoeComboBox}"  SelectedItem="{Binding SearchCriteria_DocType}" />
 
-                <Grid Grid.Row="2" Grid.ColumnSpan="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="30" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Style="{StaticResource StandardTextBlock}" Text="Kwota od:" />
-                    <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" />
-
-                    <TextBlock
-                        Grid.Column="4"
-                        Style="{StaticResource StandardTextBlock}"
-                        Text="Kwota do:" />
-                    <TextBox Grid.Column="6" Style="{StaticResource TextBoxDark}" />
-                </Grid>
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Style="{StaticResource StandardTextBlock}"
+                    Text="Data wystawienia od:" />
+                
+                <DatePicker
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Style="{StaticResource DatePickerDark}" SelectedDate="{Binding Path=SearchCriteria_DocDateFrom}" />
 
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="4"
                     Style="{StaticResource StandardTextBlock}"
-                    Text="Data wystawienia:" />
+                    Text="Data wystawienia do:" />
                 <DatePicker
                     Grid.Row="2"
                     Grid.Column="6"
-                    Style="{StaticResource DatePickerDark}" />
+                    Style="{StaticResource DatePickerDark}" SelectedDate="{Binding Path=SearchCriteria_DocDateTo}" />
 
                 <TextBlock
                     Grid.Row="4"
@@ -258,21 +232,27 @@
                 <CheckBox
                     Grid.Row="4"
                     Grid.Column="2"
-                    Style="{StaticResource StandardCheckBox}" />
+                    Style="{StaticResource StandardCheckBox}"  IsChecked="{Binding Path=ShowDocumentsOnIssue}" />
 
                 <Button
                     Grid.Row="4"
                     Grid.Column="6"
                     Content="Filtruj"
+                    Command="{Binding SearchDocsCommand}"
                     Style="{StaticResource StandardButton}" />
 
                 <DataGrid
                     Name="DaocumentDataGrid"
                     Grid.Row="6"
                     Grid.ColumnSpan="7"
+                    IsReadOnly="True"
+                    AutoGenerateColumns="False"
                     Height="150"
-                    ColumnWidth="90"
+                    Visibility="{Binding Path=GridWithSearchDocumentVisibility}"
+                     ColumnWidth="*"
                     RowHeaderWidth="0"
+                     SelectedItem="{Binding Path=SelectedDocumentOnGrid}"
+                    ItemsSource="{Binding DocumentsGridList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Style="{StaticResource DataGirdDark}">
 
                     <!--  Zmiana koloru nazw kolumn  -->
@@ -286,19 +266,64 @@
                     </DataGrid.Resources>
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=DataWpisu}" Header="Data wpisu" />
-                        <DataGridTextColumn Binding="{Binding Path=NrSprawy}" Header="Nr. sprawy" />
-                        <DataGridTextColumn Binding="{Binding Path=Dluznik}" Header="Dłużnik" />
-                        <DataGridTextColumn Binding="{Binding Path=Wierzyciel}" Header="Wierzyciel" />
-                        <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status" />
-                        <DataGridTextColumn Binding="{Binding Path=Kwota}" Header="Kwota" />
+                        <DataGridTextColumn Header="Numer dokumentu" Binding="{Binding DocNo}" />
+                        <DataGridTextColumn Header="Typ" Binding="{Binding DocType}" />
+                        <DataGridTextColumn Header="Autor" Binding="{Binding Author}" />
+                        <DataGridTextColumn Header="Utworzono" Binding="{Binding CreateDate}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <DataGrid
+                    Grid.Row="6"
+                    Grid.ColumnSpan="7"
+                    IsReadOnly="True"
+                    AutoGenerateColumns="False"
+                    Height="150"
+                    Visibility="{Binding Path=GirdWithAssociatedDocumentsVisibility}"
+                     ColumnWidth="*"
+                    RowHeaderWidth="0"
+                    ItemsSource="{Binding DocumentsOnIssueGridList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource DataGirdDark}">
+
+                    <!--  Zmiana koloru nazw kolumn  -->
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#515151" />
+                            <Setter Property="Foreground" Value="#aaaaaa" />
+                            <Setter Property="Padding" Value="10,5,10,5" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Numer dokumentu" Binding="{Binding DocNo}" />
+                        <DataGridTextColumn Header="Typ" Binding="{Binding DocType}" />
+                        <DataGridTextColumn Header="Autor" Binding="{Binding Author}" />
+                        <DataGridTextColumn Header="Utworzono" Binding="{Binding CreateDate}" />
                     </DataGrid.Columns>
                 </DataGrid>
 
                 <Button
                     Grid.Row="8"
+                    Grid.Column="4"
+                    Content="Dołącz dokument"
+                    Visibility="{Binding Path=GridWithSearchDocumentVisibility}"
+                    Command="{Binding AddDocumentToIssueCommand}"
+                    Style="{StaticResource StandardButton}" />
+
+                <Button
+                    Grid.Row="8"
+                    Grid.Column="4"
+                    Content="Usuń dołączony dokument"
+                    Visibility="{Binding Path=GirdWithAssociatedDocumentsVisibility}"
+                    Command="{Binding AddDocumentToIssueCommand}"
+                    Style="{StaticResource StandardButton}" />
+
+                <Button
+                    Grid.Row="8"
                     Grid.Column="6"
                     Content="Dodaj sprawę"
+                    Command="{Binding SaveIssueCommand}"
                     Style="{StaticResource StandardButton}" />
             </Grid>
         </Grid>

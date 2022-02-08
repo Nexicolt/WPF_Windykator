@@ -82,7 +82,7 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <AdornedElementPlaceholder Name="customAdorner"
+                        <AdornedElementPlaceholder Name="customAdorner" 
                                                        Grid.Column="0"
                                                        VerticalAlignment="Center" />
                         <Border Grid.Column="1"
@@ -90,8 +90,9 @@
                                     Height="20"
                                     Margin="5,0,0,0"
                                     Background="Red"
+
                                     CornerRadius="10"
-                                    ToolTip="{Binding ElementName=customAdorner,
+                                    ToolTip="{Binding ElementName=customAdorner, UpdateSourceTrigger=PropertyChanged,
                                                       Path=AdornedElement.(Validation.Errors).CurrentItem.ErrorContent}">
                             <TextBlock HorizontalAlignment="center"
                                            VerticalAlignment="center"

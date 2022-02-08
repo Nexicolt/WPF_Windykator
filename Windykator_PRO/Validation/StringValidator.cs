@@ -18,6 +18,7 @@ namespace Windykator_PRO.Validation
 
         public static string IsNumber(string text)
         {
+            if(string.IsNullOrEmpty(text)) return Value_IsRequired;
             return (!Regex.IsMatch(text, @"^\d+$")) ? Value_HaveToBeNumber : null;
         }
     }

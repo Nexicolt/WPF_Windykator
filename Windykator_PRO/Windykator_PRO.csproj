@@ -227,6 +227,10 @@
     <Compile Include="Migrations\202202072027299_sprawy.designer.cs">
       <DependentUpon>202202072027299_sprawy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202081629145_Issue currency.cs" />
+    <Compile Include="Migrations\202202081629145_Issue currency.designer.cs">
+      <DependentUpon>202202081629145_Issue currency.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Validation\DocumentValidator.cs" />
     <Compile Include="Validation\StringValidator.cs" />
@@ -485,6 +489,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202072027299_sprawy.resx">
       <DependentUpon>202202072027299_sprawy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202081629145_Issue currency.resx">
+      <DependentUpon>202202081629145_Issue currency.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

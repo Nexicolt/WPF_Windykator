@@ -9,7 +9,7 @@ namespace Windykator_PRO.ViewModel
 
     public class IssueGridView
     {
-        public DateTime Date{ get; set; }
+        public DateTime Date { get; set; }
         public string InternalNo { get; set; }
         public string Debtor { get; set; }
         public string Client { get; set; }
@@ -53,6 +53,11 @@ namespace Windykator_PRO.ViewModel
             }
         }
 
+
+        public ICommand CreateNewIssueCommand
+        {
+            get => MainWindowViewModel.MainWindowHandler.CreateIssueCommand;
+        }
 
         public string SearchCriteria_Debtor { get; set; }
         public DateTime? SearchCriteria_DateFrom { get; set; }
@@ -134,6 +139,15 @@ namespace Windykator_PRO.ViewModel
             {
                 baseQuery = baseQuery.Where(row => row.IsFinished);
             }
+            if(_selectedCustomer != null)
+            {
+                baseQuery = baseQuery.Where(row => row.Customer.Id == _selectedCustomer.Id);
+            }
+            if (_selectedDebtor != null)
+            {
+                baseQuery = baseQuery.Where(row => row.Debtor.Id == _selectedDebtor.Id);
+            }
+
             GridList = new System.Collections.ObjectModel.ObservableCollection<IssueGridView>
                 (
                 baseQuery.Select(row => new IssueGridView

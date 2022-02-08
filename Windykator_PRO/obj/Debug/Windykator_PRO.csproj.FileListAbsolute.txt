@@ -124,3 +124,4 @@ C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_P
 C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.x.resources
 C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.csproj.AssemblyReference.cache
 C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.sprawy.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.Issuecurrency.resources

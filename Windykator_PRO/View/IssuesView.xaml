@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <ToolBar Grid.Row="0" Style="{StaticResource ToolbarStyle}">
-            <Button Command="{Binding CreateIssueCommand}" Style="{StaticResource ToolbarButton}">
+            <Button Command="{Binding CreateNewIssueCommand}" Style="{StaticResource ToolbarButton}">
                 <StackPanel>
                     <Image Source="/Icons/Issues/add_issue.png" Style="{StaticResource ToolbarButtonImage}" />
                     <TextBlock Style="{StaticResource ToolbarButtontText}" Text="Dodaj sprawę" />
@@ -112,7 +112,7 @@
 
                     <Button  Grid.Column="2" Width="20" Content="..." HorizontalContentAlignment="Center" Command="{Binding SelectDebtorModalCommand}"/>
                 </Grid>
-               
+
 
                 <TextBlock
                     Grid.Row="2"
@@ -224,10 +224,13 @@
                 <DataGrid
                     Name="IssuesDataGrid"
                     Grid.Row="0"
+                                        IsReadOnly="True"
+                    AutoGenerateColumns="False"
                     Height="250"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    ColumnWidth="90"
+                    ColumnWidth="*"
+                    ItemsSource="{Binding GridList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     RowHeaderWidth="0"
                     Style="{StaticResource DataGirdDark}">
 
@@ -242,12 +245,12 @@
                     </DataGrid.Resources>
 
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=DataWpisu}" Header="Data wpisu" />
-                        <DataGridTextColumn Binding="{Binding Path=NrSprawy}" Header="Nr. sprawy" />
-                        <DataGridTextColumn Binding="{Binding Path=Dluznik}" Header="Dłużnik" />
-                        <DataGridTextColumn Binding="{Binding Path=Wierzyciel}" Header="Wierzyciel" />
+                        <DataGridTextColumn Binding="{Binding Path=InternalNo}" Header="Numer sprawy" />
+                        <DataGridTextColumn Binding="{Binding Path=Client}" Header="Klient" />
+                        <DataGridTextColumn Binding="{Binding Path=Debtor}" Header="Dłużnik" />
                         <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status" />
-                        <DataGridTextColumn Binding="{Binding Path=Kwota}" Header="Kwota" />
+                        <DataGridTextColumn Binding="{Binding Path=Cost}" Header="Kwota" />
+                        <DataGridTextColumn Binding="{Binding Path=Date}" Header="Utworzono" />
                     </DataGrid.Columns>
                 </DataGrid>
 

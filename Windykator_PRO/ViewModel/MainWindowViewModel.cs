@@ -117,6 +117,7 @@ namespace Windykator_PRO.ViewModel
             }
         }
 
+
         public ICommand Import
         {
             get

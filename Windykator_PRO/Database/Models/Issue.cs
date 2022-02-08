@@ -13,6 +13,8 @@ namespace Windykator_PRO.Database.Models
 
         public decimal Cost { get; set; }
 
+        public virtual Currency Currency { get; set; }
+
         public bool IsFinished { get; set; }
     }
 }
