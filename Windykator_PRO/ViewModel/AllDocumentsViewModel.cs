@@ -10,6 +10,7 @@ namespace Windykator_PRO.ViewModel
 
     public class DocumentGridView
     {
+        public long Id { get; set; }
         public string DocNo { get; set; }
         public string DocType { get; set; }
         public string Author { get; set; }
@@ -37,7 +38,18 @@ namespace Windykator_PRO.ViewModel
 
         public List<string> DocumentTypesForCombobox { get => db.DocumentType.Where(x => x.IsEnable).Select(x => x.Name).ToList(); }
 
-        public DocumentGridView SelectedItemOnGrid { get; set; }
+        private DocumentGridView _SelectedItemOnGrid;
+
+        public DocumentGridView SelectedItemOnGrid
+        {
+            get => _SelectedItemOnGrid; 
+            
+            set
+            {
+                _SelectedItemOnGrid = value;
+                MainWindowViewModel.MainWindowHandler.DocumentDetailsToShowID = value.Id;
+            }
+        }
 
         private void DeleteDocument()
         {
@@ -76,10 +88,13 @@ namespace Windykator_PRO.ViewModel
 
 
         }
+
+        public ICommand ShowDocumentDetailsCommand { get => MainWindowViewModel.MainWindowHandler.DocumentDetailsCommand; }
         protected override void LoadGridData()
         {
             GridList = new System.Collections.ObjectModel.ObservableCollection<DocumentGridView>(db.DocumentHeader.Where(x => x.IsEnable).Select(row => new DocumentGridView
             {
+                Id = row.Id,
                 DocNo = row.InternalNo,
                 DocType = row.DocumentType.Name,
                 Author = row.Author.Login,
@@ -104,6 +119,7 @@ namespace Windykator_PRO.ViewModel
             }
             GridList = new System.Collections.ObjectModel.ObservableCollection<DocumentGridView>(baseQuery.Select(row => new DocumentGridView
             {
+                Id = row.Id,
                 DocNo = row.InternalNo,
                 DocType = row.DocumentType.Name,
                 Author = row.Author.Login,

@@ -19,6 +19,9 @@ namespace Windykator_PRO.ViewModel
             MainWindowViewModel.MainWindowHandler = this;
         }
 
+        public long? DocumentDetailsToShowID { get; set; }
+        public long? IssueDetailsToShowId { get; set; }
+
         #region Fields
 
         //Kolekcja z komendami (komenda = wowołanie nowej zakładki)
@@ -97,6 +100,42 @@ namespace Windykator_PRO.ViewModel
             get
             {
                 return getCommand(_CreateDebtorCommand, new AddNewDebtorViewModel());
+            }
+        }
+
+        public ICommand DocumentDetailsCommand
+        {
+            get
+            {
+                return new BaseCommand(() =>
+                {
+                    if (DocumentDetailsToShowID != null)
+                    {
+
+
+                        Create(new DocumentDetailsViewModel(DocumentDetailsToShowID));
+                        DocumentDetailsToShowID = null;
+                    }
+                    else
+                        ShowErrorMessageBox("Nie wskazano dokumentu");
+                });
+            }
+        }
+
+        public ICommand IssueDetailsCommand
+        {
+            get
+            {
+                return new BaseCommand(() =>
+                {
+                    if (IssueDetailsToShowId != null)
+                    {
+                        Create(new IssueDetailsViewModel(IssueDetailsToShowId));
+                        IssueDetailsToShowId = null;
+                    }
+                    else
+                        ShowErrorMessageBox("Nie wskazano sprawy");
+                });
             }
         }
 

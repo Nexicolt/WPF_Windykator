@@ -44,10 +44,7 @@ namespace Windykator_PRO.ViewModel
                 handler(this, EventArgs.Empty);
         }
 
-        protected void ShowErrorMessageBox(string message)
-        {
-            MessageBox.Show(message, "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
-        }
+       
 
         protected void SendRefreshSignal()
         {

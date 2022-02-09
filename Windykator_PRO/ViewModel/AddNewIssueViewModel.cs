@@ -50,6 +50,14 @@ namespace Windykator_PRO.ViewModel
             }
         }
 
+        public ICommand IssueDetailsCommand
+        {
+            get
+            {
+                return MainWindowViewModel.MainWindowHandler.IssueDetailsCommand;
+            }
+        }
+
         private bool _ShowDocumentsOnIssue;
         public bool ShowDocumentsOnIssue
         {

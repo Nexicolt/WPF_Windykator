@@ -65,6 +65,11 @@ namespace Windykator_PRO.ViewModel
             Application.Current.Shutdown();
         }
 
+        protected void ShowErrorMessageBox(string message)
+        {
+            MessageBox.Show(message, "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
         private static void MaximiceApplication()
         {
             if (Application.Current.MainWindow.WindowState == WindowState.Maximized)

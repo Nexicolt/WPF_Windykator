@@ -15,8 +15,16 @@
         <vw:IssuesView />
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:IssueDetailsViewModel}">
+        <vw:IssueDetailsVIew />
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type vm:AddNewDocumentViewModel}">
         <vw:AddNewDocumentView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:DocumentDetailsViewModel}">
+        <vw:DocumentDetailsView />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:AllDocumentsViewModel}">

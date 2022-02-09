@@ -1,0 +1,225 @@
+﻿<UserControl
+    x:Class="Windykator_PRO.View.IssueDetailsVIew"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Windykator_PRO.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Dictionares/Workspace/AddNewIssueDictionary.xaml" />
+    </UserControl.Resources>
+    <TabControl Background="Transparent" BorderThickness="0" FontWeight="Medium">
+
+        <TabItem Header="Dane główne" Background="Transparent" FontWeight="Normal">
+            <Grid Style="{StaticResource Tab_MainGrid}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Margin="0,10,0,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Style="{StaticResource HeaderTextBlock}" Text="Klient" Grid.Row="2" />
+                    <TextBlock
+                Grid.Column="2" Grid.Row="2"
+                Style="{StaticResource HeaderTextBlock}"
+                Text="Dłużnik" />
+                    <!--  Lewa kolumna  -->
+                    <Grid Grid.Row="4" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="20" />
+
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa" />
+                        <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" IsReadOnly="True" Text="{Binding CustomerName, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <TextBlock
+                    Grid.Row="2"
+                    Style="{StaticResource StandardTextBlock}"
+                    Text="Lokalizacja:" />
+                        <TextBox
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    IsReadOnly="True"
+                    Text="{Binding CustomerLocation}"
+                    Style="{StaticResource TextBoxDark}" />
+
+
+
+
+                        <TextBlock
+                        Grid.Column="0"
+                        Grid.Row="4"
+             
+                        Style="{StaticResource StandardTextBlock}"
+                        Text="Waluta:" />
+                        <ComboBox Grid.Column="2" IsEnabled="False" ItemsSource="{Binding CurrencySelectList}"  Grid.Row="4" Style="{StaticResource ComboBoxDark}" SelectedItem="{Binding Currency, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+
+                    </Grid>
+
+                    <Grid
+                Grid.Row="4"
+                Grid.Column="2"
+                Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="45" />
+                            <RowDefinition Height="20" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Style="{StaticResource StandardTextBlock}" Text="Nazwa" />
+                        <TextBox Grid.Column="2" Style="{StaticResource TextBoxDark}" IsReadOnly="True" Text="{Binding DebtorName, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock
+                    Grid.Row="2"
+                    
+                    Style="{StaticResource StandardTextBlock}"
+                    Text="Lokalizacja:" />
+                        <TextBox
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    IsReadOnly="True"
+                    Text="{Binding DebtorLocation}"
+                    Style="{StaticResource TextBoxDark}" />
+
+                        <TextBlock
+                    Grid.Row="4"
+                    Style="{StaticResource StandardTextBlock}"
+                    Text="Należność:" />
+                        <TextBox
+                    Grid.Row="4"
+                    Grid.Column="2"
+                                 IsReadOnly="True"
+                    Text="{Binding DebtorDue, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource TextBoxDark}" />
+
+
+                    </Grid>
+                    <Grid Grid.Row="0" Grid.ColumnSpan="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                    Style="{StaticResource StandardTextBlock}"
+                    Text="Numer sprawy:" />
+                        <TextBox
+                    Grid.Column="2"
+                            IsReadOnly="True"
+                    Text="{Binding InternalNo, ValidatesOnDataErrors=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource TextBoxDark}" />
+                    </Grid>
+                </Grid>
+
+                <Separator Grid.Row="1" />
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource HeaderTextBlock}" Text="Dołączone dokumenty" />
+
+                    <Grid Grid.Row="1" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="*" />
+
+
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+
+
+
+                        <DataGrid
+                    Grid.Row="0"
+                    Grid.ColumnSpan="7"
+                    IsReadOnly="True"
+                    AutoGenerateColumns="False"
+                    Height="150"
+                     ColumnWidth="*"
+                    RowHeaderWidth="0"
+                            SelectedItem="{Binding Path=SelectedDocumentOnGrid}"
+                    ItemsSource="{Binding GridList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Style="{StaticResource DataGirdDark}">
+
+                            <!--  Zmiana koloru nazw kolumn  -->
+                            <DataGrid.Resources>
+                                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="#515151" />
+                                    <Setter Property="Foreground" Value="#aaaaaa" />
+                                    <Setter Property="Padding" Value="10,5,10,5" />
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                </Style>
+                            </DataGrid.Resources>
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Numer dokumentu" Binding="{Binding DocNo}" />
+                                <DataGridTextColumn Header="Typ" Binding="{Binding DocType}" />
+                                <DataGridTextColumn Header="Autor" Binding="{Binding Author}" />
+                                <DataGridTextColumn Header="Utworzono" Binding="{Binding CreateDate}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <Button
+                    Grid.Row="2"
+                    Grid.Column="4"
+                    Content="Szczególy dokumentu"
+                    Command="{Binding DocumentDetailsCommand}"
+                    Style="{StaticResource StandardButton}" />
+
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</UserControl>

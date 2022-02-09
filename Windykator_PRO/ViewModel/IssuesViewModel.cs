@@ -9,6 +9,7 @@ namespace Windykator_PRO.ViewModel
 
     public class IssueGridView
     {
+        public long Id { get; set; }
         public DateTime Date { get; set; }
         public string InternalNo { get; set; }
         public string Debtor { get; set; }
@@ -72,6 +73,19 @@ namespace Windykator_PRO.ViewModel
         private CustomerGridDto _selectedCustomer;
         private DebtorGridDto _selectedDebtor;
 
+        private IssueGridView _SelectedDocumentOnGrid;
+        public IssueGridView SelectedDocumentOnGrid
+        {
+            get => _SelectedDocumentOnGrid;
+
+            set
+            {
+                _SelectedDocumentOnGrid = value;
+                MainWindowViewModel.MainWindowHandler.IssueDetailsToShowId = value.Id;
+            }
+        }
+
+        public ICommand IssueDetailsCommand { get => MainWindowViewModel.MainWindowHandler.IssueDetailsCommand; }
         private void GetClientDto(CustomerGridDto customerDto)
         {
             SearchCriteria_Client = $"{customerDto.Name}, {customerDto.City} ul. {customerDto.Street} ";
@@ -92,6 +106,7 @@ namespace Windykator_PRO.ViewModel
                 (
                 db.Issue.Where(row => row.IsEnable).Select(row => new IssueGridView
                 {
+                    Id = row.Id,
                     Client = row.Customer.Name,
                     Cost = row.Cost,
                     Date = row.CreateDate.Value,
@@ -124,7 +139,7 @@ namespace Windykator_PRO.ViewModel
             }
             if (SearchCriteria_IsIndyvidualCustomer)
             {
-                baseQuery = baseQuery.Where(row => row.Customer.IsIndyvidual);
+                baseQuery = baseQuery.Where(row => row.Customer.IsIndyvidual);//Trzeci
             }
             else
             {
@@ -139,7 +154,7 @@ namespace Windykator_PRO.ViewModel
             {
                 baseQuery = baseQuery.Where(row => row.IsFinished);
             }
-            if(_selectedCustomer != null)
+            if (_selectedCustomer != null)
             {
                 baseQuery = baseQuery.Where(row => row.Customer.Id == _selectedCustomer.Id);
             }
@@ -152,6 +167,7 @@ namespace Windykator_PRO.ViewModel
                 (
                 baseQuery.Select(row => new IssueGridView
                 {
+                    Id = row.Id,
                     Client = row.Customer.Name,
                     Cost = row.Cost,
                     Date = row.CreateDate.Value,

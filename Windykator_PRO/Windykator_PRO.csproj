@@ -244,15 +244,24 @@
     <Compile Include="ViewModel\ClientsViewModel.cs" />
     <Compile Include="ViewModel\CommandViewModel.cs" />
     <Compile Include="ViewModel\DebtorsViewModel.cs" />
+    <Compile Include="ViewModel\DocumentDetailsViewModel.cs" />
     <Compile Include="ViewModel\EditDebtorViewModel.cs" />
     <Compile Include="ViewModel\EditClientViewModel.cs" />
+    <Compile Include="ViewModel\Icommand.cs" />
     <Compile Include="ViewModel\ImportOptionViewModel.cs" />
+    <Compile Include="ViewModel\IssueDetailsViewModel.cs" />
     <Compile Include="ViewModel\IssuesViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\WorkspaceViewModel.cs" />
     <Compile Include="View\AddNewDocumentView.xaml.cs">
       <DependentUpon>AddNewDocumentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IssueDetailsVIew.xaml.cs">
+      <DependentUpon>IssueDetailsVIew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentDetailsView.xaml.cs">
+      <DependentUpon>DocumentDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AllDocumentsView.xaml.cs">
       <DependentUpon>AllDocumentsView.xaml</DependentUpon>
@@ -356,6 +365,14 @@
     <Page Include="View\AddNewDocumentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\IssueDetailsVIew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DocumentDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\AllDocumentsView.xaml">
       <SubType>Designer</SubType>
