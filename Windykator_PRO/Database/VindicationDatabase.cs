@@ -41,10 +41,12 @@ namespace Windykator_PRO.Database
         public DbSet<DocumentType> DocumentType { get; set; }
 
         public DbSet<Issue> Issue { get; set; }
+        public DbSet<IssueAddnotation> Addnotation { get; set; }
 
         #endregion TABLES
 
         #region VIEWS
+
 
         public IQueryable<Customer_GridView> Customer_GridView
         {
@@ -56,8 +58,8 @@ namespace Windykator_PRO.Database
                     Name = row.Name,
                     City = row.Adress.City,
                     Street = row.Adress.Street,
-                    IssuesCount = 0,
-                    Due = 0,
+                    IssuesCount = this.Issue.Where(x => x.Customer.Id == row.Id).Count(),
+                    Due = (this.Issue.Where(x => x.Customer.Id == row.Id).Count() > 0) ? this.Issue.Where(x => x.Customer.Id == row.Id).Sum(p=>p.Cost) : 0,
                     Currency = (row.IsForeignCustomer) ? "EUR" : "PLN",
                     IsIndyvidual = row.IsIndyvidual,
                     DuringDuringCourtProcess = false
@@ -75,8 +77,8 @@ namespace Windykator_PRO.Database
                     Name = row.Name,
                     City = row.Adress.City,
                     Street = row.Adress.Street,
-                    IssuesCount = 0,
-                    Debt = 0,
+                    IssuesCount = this.Issue.Where(x => x.Debtor.Id == row.Id).Count(),
+                    Debt = (this.Issue.Where(x => x.Debtor.Id == row.Id).Count() > 0) ? this.Issue.Where(x => x.Debtor.Id == row.Id).Sum(p => p.Cost) : 0,
                     Currency = (row.IsForeignDebtor) ? "EUR" : "PLN",
                     IsIndyvidual = row.IsIndyvidual,
                     DuringDuringCourtProcess = false

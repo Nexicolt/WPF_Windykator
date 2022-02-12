@@ -133,9 +133,25 @@ namespace Windykator_PRO.ViewModel
         #endregion Commands
 
         #region Functions
-
+  protected override bool IsValid()
+        {
+            return
+                (
+                this["Name"] == null &&
+                this["City"] == null &&
+                this["Street"] == null &&
+                this["IBAN"] == null &&
+                this["BankName"] == null &&
+                this["BankAccountNumber"] == null
+                );
+        }
         protected virtual void Save()
         {
+            if (!IsValid())
+            {
+                ShowErrorMessageBox("Wystapiły błędy w formularzu. Popraw je przed dodaniem");
+                return;
+            }
             if (debtorAlreadyExists(Name))
             {
                 ShowErrorMessageBox("Dłużnik o takiej nazwie już istnieje");

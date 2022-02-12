@@ -1,0 +1,45 @@
+﻿<Window x:Class="Windykator_PRO.View.NewDocument.AddnotationModal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Windykator_PRO.View.NewDocument"
+         mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Margin="0"
+        Padding="0"
+
+        Background="Transparent"
+        Name="LoginWindow"
+        Title="LoginForm" Height="220" Width="300">
+
+    <Window.Resources>
+        <ResourceDictionary Source="/Dictionares/Workspace/ClientsDictionary.xaml" />
+    </Window.Resources>
+
+    <Grid Background="#302d2d" Margin="-15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock  Name="AddnotationTitle" Text="" TextAlignment="Center" Margin="0,20,0,0" Foreground="#aaaaaa" FontSize="18" FontWeight="Bold" />
+        <TextBox
+                    Grid.Column="0"
+                    Grid.Row="2"
+         
+            HorizontalAlignment="Center"
+            Name="AddnotationContent"
+                    Style="{StaticResource TextBoxDark}" Padding="0" Margin="0" IsReadOnly="True"  Height="100" Width="280" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+
+        <Grid Grid.Row="4">
+
+            <Button Content="Zamknij" Style="{StaticResource StandardButton}"  Grid.Row="2"  Click="Button_Click"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

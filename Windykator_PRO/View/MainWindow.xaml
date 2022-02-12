@@ -238,7 +238,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Image Width="20" Source="/Icons/StatusBar/user.png" />
-                    <TextBlock Grid.Column="2" Style="{StaticResource StandardTextBlock}">Administrator</TextBlock>
+                    <TextBlock Grid.Column="2" Style="{StaticResource StandardTextBlock}" Name="LoggedUserInput"></TextBlock>
                 </Grid>
             </StatusBarItem>
             <Separator />
@@ -265,7 +265,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Image Width="20" Source="/Icons/StatusBar/clock.png" />
-                    <TextBlock Grid.Column="2" Style="{StaticResource StandardTextBlock}">12:25</TextBlock>
+                    <TextBlock Grid.Column="2" Style="{StaticResource StandardTextBlock}" Name="TimeInput"></TextBlock>
                 </Grid>
             </StatusBarItem>
             <Separator />

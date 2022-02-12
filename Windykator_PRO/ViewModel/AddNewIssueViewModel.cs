@@ -180,6 +180,7 @@ namespace Windykator_PRO.ViewModel
 
             DocumentsGridList = new ObservableCollection<DocumentGridView>(baseQuery.Select(row => new DocumentGridView
             {
+                Id = row.Id,
                 DocNo = row.InternalNo,
                 DocType = row.DocumentType.Name,
                 Author = row.Author.Login,
@@ -263,7 +264,7 @@ namespace Windykator_PRO.ViewModel
 
             foreach (var doc in DocumentsOnIssueGridList)
             {
-                var docDto = db.DocumentHeader.Where(x => x.InternalNo == InternalNo).FirstOrDefault();
+                var docDto = db.DocumentHeader.Where(x => x.Id == SelectedDocumentOnGrid.Id).FirstOrDefault();
                 var colaboration = new DocumentToIssue { DocumentHeader = docDto, Issue = newIssue };
                 db.DocumentToIssue.Add(colaboration);
             }

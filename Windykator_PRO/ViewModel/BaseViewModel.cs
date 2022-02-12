@@ -92,7 +92,7 @@ namespace Windykator_PRO.ViewModel
             }
         }
 
-        protected long GetLoggedUserId() => long.Parse(Application.Current.Resources["User_Id"].ToString());
+        protected long GetLoggedUserId() => long.Parse( (Application.Current.Resources["User_Id"] == null) ? "1" : Application.Current.Resources["User_Id"].ToString());
 
 
         #endregion WindowPropertes
@@ -112,7 +112,7 @@ namespace Windykator_PRO.ViewModel
             return propertyName;
         }
 
-        private void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null)
@@ -125,5 +125,7 @@ namespace Windykator_PRO.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion Propertychanged
+
+
     }
 }

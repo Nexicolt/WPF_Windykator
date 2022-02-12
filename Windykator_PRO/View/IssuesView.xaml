@@ -260,6 +260,8 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
                     <Button Grid.Column="0" Style="{StaticResource StandardButton}" Command="{Binding SearchCommand}">
@@ -268,7 +270,13 @@
                         </StackPanel>
                     </Button>
 
-                    <Button Grid.Column="2" Style="{StaticResource StandardButton}" Command="{Binding IssueDetailsCommand}">
+                    <Button Grid.Column="2" Style="{StaticResource StandardButton}" Command="{Binding ClearCommand}">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Wyczyść" />
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Grid.Column="4" Style="{StaticResource StandardButton}" Command="{Binding IssueDetailsCommand}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Szczegóły sprawy" />
                         </StackPanel>

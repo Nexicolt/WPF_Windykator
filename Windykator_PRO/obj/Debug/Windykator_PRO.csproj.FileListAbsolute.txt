@@ -129,3 +129,8 @@ C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\Documen
 C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\DocumentDetailsView.baml
 C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\IssueDetailsVIew.g.cs
 C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\IssueDetailsVIew.baml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\IbanNet.dll
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\bin\Debug\IbanNet.xml
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\Windykator_PRO.Migrations.Adnotacje.resources
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\NewAddnotation\AddnotationModal.g.cs
+C:\Users\Kamil\Source\Repos\WPF_Windykator\Windykator_PRO\obj\Debug\View\NewAddnotation\AddnotationModal.baml

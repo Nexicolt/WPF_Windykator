@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -17,6 +18,8 @@ namespace Windykator_PRO.ViewModel
         public MainWindowViewModel()
         {
             MainWindowViewModel.MainWindowHandler = this;
+            CultureInfo.CurrentCulture = CultureInfo.CreateSpecificCulture("pl-PL");
+
         }
 
         public long? DocumentDetailsToShowID { get; set; }

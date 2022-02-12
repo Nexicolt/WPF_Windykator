@@ -134,8 +134,26 @@ namespace Windykator_PRO.ViewModel
 
         #region Functions
 
+        protected override bool IsValid()
+        {
+            return
+                (
+                this["Name"] == null &&
+                this["City"] == null &&
+                this["Street"] == null &&
+                this["IBAN"] == null &&
+                this["BankName"] == null &&
+                this["BankAccountNumber"] == null
+                );
+        }
         protected virtual void Save()
         {
+            if (!IsValid())
+            {
+                ShowErrorMessageBox("Wystapiły błędy w formularzu. Popraw je przed dodaniem");
+                return;
+            }
+
             if (customerAlreadyExists(Name))
             {
                 ShowErrorMessageBox("Klient o takiej nazwie już istnieje");

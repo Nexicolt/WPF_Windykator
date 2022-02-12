@@ -22,7 +22,17 @@ namespace Windykator_PRO.ViewModel
 
         public int IssuesQuantity { get; set; }
 
-        public decimal Due { get; set; }
+        private decimal _due;
+        public decimal? Due
+        {
+            get => _due;
+            set
+            {
+                if (value == null)
+                    value = 0;
+                _due = (decimal)value;
+            }
+        }
         public string Currency { get; set; }
     }
 
@@ -36,7 +46,7 @@ namespace Windykator_PRO.ViewModel
         {
             base.DisplayName = "Klienci";
             db = new VindicationDatabase();
-            SearchCriteria_IsIndyvidual = true;
+            SearchCriteria_IsIndyvidual = false;
             SelectClientButtonVisbility = (!toSelectClient) ? Visibility.Hidden : Visibility.Visible;
         }
 
@@ -56,8 +66,8 @@ namespace Windykator_PRO.ViewModel
         public bool SearchCriteria_DuringCourtProcess { get; set; }
         public bool SearchCriteria_NotDuringCourtProcess { get => !SearchCriteria_DuringCourtProcess; }
 
-        public decimal? SearchCriteria_DueFrom { get; set; }
-        public decimal? SearchCriteria_DueTo { get; set; }
+        public string SearchCriteria_DueFrom { get; set; }
+        public string SearchCriteria_DueTo { get; set; }
 
         public CustomerGridDto SelectedItemOnGrid { get; set; }
 
@@ -191,29 +201,33 @@ namespace Windykator_PRO.ViewModel
             }
             if (SearchCriteria_IsIndyvidual)
             {
-                baseQueryable = baseQueryable.Where(row => row.IsIndyvidual);
+                baseQueryable = baseQueryable.Where(row => row.IsIndyvidual == SearchCriteria_IsIndyvidual);
             }
-            else
+            if (SearchCriteria_IsCompany)
             {
-                baseQueryable = baseQueryable.Where(row => !row.IsIndyvidual);
+                baseQueryable = baseQueryable.Where(row => !row.IsIndyvidual == SearchCriteria_IsCompany);
             }
 
             if (SearchCriteria_DuringCourtProcess)
             {
-                baseQueryable = baseQueryable.Where(row => row.DuringDuringCourtProcess);
+                baseQueryable = baseQueryable.Where(row => row.DuringDuringCourtProcess == SearchCriteria_DuringCourtProcess);
             }
-            else
+            if (SearchCriteria_NotDuringCourtProcess)
             {
-                baseQueryable = baseQueryable.Where(row => !row.DuringDuringCourtProcess);
+                baseQueryable = baseQueryable.Where(row => !row.DuringDuringCourtProcess == SearchCriteria_NotDuringCourtProcess);
             }
 
-            if (SearchCriteria_DueFrom.HasValue)
+            if (!string.IsNullOrEmpty(SearchCriteria_DueFrom))
             {
-                baseQueryable = baseQueryable.Where(row => row.Due >= SearchCriteria_DueFrom.Value);
+                decimal converted;
+                if(decimal.TryParse(SearchCriteria_DueFrom, out converted))
+                    baseQueryable = baseQueryable.Where(row => row.Due >= converted);
             }
-            if (SearchCriteria_DueTo.HasValue)
+            if (!string.IsNullOrEmpty(SearchCriteria_DueTo))
             {
-                baseQueryable = baseQueryable.Where(row => row.Due <= SearchCriteria_DueTo.Value);
+                decimal converted;
+                if (decimal.TryParse(SearchCriteria_DueTo, out converted))
+                    baseQueryable = baseQueryable.Where(row => row.Due <= converted);
             }
             if (!string.IsNullOrEmpty(SearchCriteria_SelectedCurrency))
             {
@@ -230,6 +244,16 @@ namespace Windykator_PRO.ViewModel
                 Currency = row.Currency,
                 Due = row.Due
             }).ToList());
+        }
+
+        protected override void ClearSearchCriteria()
+        {
+            SearchCriteria_IsIndyvidual = false;
+            SearchCriteria_DuringCourtProcess = false;
+
+            ClearAllProperties(this); //Czyści tylko stringi i combobox'y
+
+            LoadGridData();
         }
     }
 }

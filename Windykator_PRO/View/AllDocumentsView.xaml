@@ -10,7 +10,7 @@
         <ResourceDictionary Source="/Dictionares/Workspace/ClientsDictionary.xaml" />
     </UserControl.Resources>
 
-    <Grid Style="{StaticResource Tab_MainGrid}">
+    <Grid Style="{StaticResource Tab_MainGrid}" >
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -139,6 +139,8 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
                     <Button Style="{StaticResource StandardButton}" Command="{Binding SearchCommand}" >
@@ -147,7 +149,14 @@
                         </StackPanel>
                     </Button>
 
-                    <Button Style="{StaticResource StandardButton}" Command="{Binding ShowDocumentDetailsCommand}" Grid.Column="2" >
+                    <Button Style="{StaticResource StandardButton}" Command="{Binding ClearCommand}" Grid.Column="2" >
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Wyczyść" />
+                        </StackPanel>
+                    </Button>
+
+
+                    <Button Style="{StaticResource StandardButton}" Command="{Binding ShowDocumentDetailsCommand}" Grid.Column="4" >
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Wyświetl szczególy" />
                         </StackPanel>

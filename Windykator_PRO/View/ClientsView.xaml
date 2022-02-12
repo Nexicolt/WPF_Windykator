@@ -283,7 +283,11 @@
                 <Grid Grid.Row="2" Width="Auto">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
@@ -293,12 +297,17 @@
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="klienta" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="1" Style="{StaticResource StandardButton}" Visibility="{Binding Path=SelectClientButtonVisbility}" Command="{Binding SelectClientCommand}">
+                    <Button Grid.Column="2" Style="{StaticResource StandardButton}" Visibility="{Binding Path=SelectClientButtonVisbility}" Command="{Binding SelectClientCommand}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Wskaż" />
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="2" Style="{StaticResource StandardButton}" Command="{Binding SearchCommand}">
+                    <Button Grid.Column="4" Style="{StaticResource StandardButton}" Command="{Binding ClearCommand}">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Wyczyść" />
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="6" Style="{StaticResource StandardButton}" Command="{Binding SearchCommand}">
                         <StackPanel>
                             <TextBlock Style="{StaticResource BottomButtonTextBlock}" Text="Szukaj" />
                         </StackPanel>

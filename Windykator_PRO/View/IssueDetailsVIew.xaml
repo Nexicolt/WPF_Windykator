@@ -221,5 +221,81 @@
                 </Grid>
             </Grid>
         </TabItem>
+        <TabItem Header="Adnotacje" Background="Transparent" FontWeight="Normal">
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <DataGrid
+                    Name="IssuesDataGrid"
+                    Grid.Row="0"
+                                        IsReadOnly="True"
+                    AutoGenerateColumns="False"
+                    Height="250"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    SelectedItem="{Binding Path=SelectedAddnotationOnGrid}"
+                    ColumnWidth="*"
+                    ItemsSource="{Binding AddnotationsGridList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    RowHeaderWidth="0"
+                    Style="{StaticResource DataGirdDark}">
+
+                    <DataGrid.InputBindings>
+                        <MouseBinding Gesture="LeftDoubleClick" Command="{Binding DoubleRowClickCommand}" />
+                    </DataGrid.InputBindings>
+                    <!--  Zmiana koloru nazw kolumn  -->
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#515151" />
+                            <Setter Property="Foreground" Value="#aaaaaa" />
+                            <Setter Property="Padding" Value="10,5,10,5" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=Id}" Header="Nr." />
+                        <DataGridTextColumn Binding="{Binding Path=Title}" Header="Tytuł" />
+                        <DataGridTextColumn Binding="{Binding Path=Author}" Header="Autor" />
+                        <DataGridTextColumn Binding="{Binding Path=CreateDate}" Header="Data dodania" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Style="{StaticResource StandardTextBlock}" Text="Tytuł:"/>
+                    <TextBox Style="{StaticResource TextBoxDark}" Grid.Column="2" Text="{Binding AddnotationTitle}" />
+
+                    <TextBlock Style="{StaticResource StandardTextBlock}" Grid.Row="2" Text="Treść:"/>
+                    <TextBox Style="{StaticResource TextBoxDark}" Text="{Binding AddnotationContent}" Grid.Column="2" Grid.Row="2" Height="200" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" />
+
+                    <Grid Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{StaticResource StandardButton}" Content="Dodaj" Grid.Column="1" Command="{Binding AddAddnotationCommand}"/>
+                    </Grid>
+                    
+                </Grid>
+            </Grid>
+        </TabItem>
     </TabControl>
 </UserControl>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -15,8 +16,23 @@ namespace Windykator_PRO
         public MainWindow()
         {
             InitializeComponent();
+            LoggedUserInput.Text = (Application.Current.Resources["User_Login"] != null) ? Application.Current.Resources["User_Login"].ToString() : "";
+            UpdateTimer();
         }
 
+
+
+        private void UpdateTimer()
+        {
+            new Thread(() =>
+            {
+                while (true)
+                {
+                    TimeInput.Dispatcher.BeginInvoke((Action)(() => TimeInput.Text = DateTime.Now.ToString("HH:mm:ss")));
+                    Thread.Sleep(1000);
+                }
+            }).Start();
+        }
         /**
          * Funkcja od chwytania okna i jego prenoszenia
          */

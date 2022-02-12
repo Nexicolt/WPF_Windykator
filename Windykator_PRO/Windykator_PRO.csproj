@@ -56,6 +56,9 @@
     <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="IbanNet, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IbanNet.5.4.0\lib\net472\IbanNet.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -147,6 +150,7 @@
     <Compile Include="Database\Models\DocumentToIssue.cs" />
     <Compile Include="Database\Models\DocumentType.cs" />
     <Compile Include="Database\Models\Issue.cs" />
+    <Compile Include="Database\Models\IssueAddnotation.cs" />
     <Compile Include="Database\Models\PaymentMethod.cs" />
     <Compile Include="Database\Models\Assortment.cs" />
     <Compile Include="Database\Models\Services.cs" />
@@ -231,7 +235,12 @@
     <Compile Include="Migrations\202202081629145_Issue currency.designer.cs">
       <DependentUpon>202202081629145_Issue currency.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202121532521_Adnotacje.cs" />
+    <Compile Include="Migrations\202202121532521_Adnotacje.designer.cs">
+      <DependentUpon>202202121532521_Adnotacje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Validation\BusinessValidator.cs" />
     <Compile Include="Validation\DocumentValidator.cs" />
     <Compile Include="Validation\StringValidator.cs" />
     <Compile Include="ViewModel\AddNewClientViewModel.cs" />
@@ -295,6 +304,9 @@
     </Compile>
     <Compile Include="View\LoginForm.xaml.cs">
       <DependentUpon>LoginForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewAddnotation\AddnotationModal.xaml.cs">
+      <DependentUpon>AddnotationModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewDocument\AskForProductQuantityWIndow.xaml.cs">
       <DependentUpon>AskForProductQuantityWIndow.xaml</DependentUpon>
@@ -430,6 +442,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\NewAddnotation\AddnotationModal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\NewDocument\AskForProductQuantityWIndow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -509,6 +525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202081629145_Issue currency.resx">
       <DependentUpon>202202081629145_Issue currency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202121532521_Adnotacje.resx">
+      <DependentUpon>202202121532521_Adnotacje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

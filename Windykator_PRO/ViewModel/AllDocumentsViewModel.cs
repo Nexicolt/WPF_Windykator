@@ -25,6 +25,8 @@ namespace Windykator_PRO.ViewModel
         {
             this.DisplayName = "Dokumenty";
             db = new VindicationDatabase();
+
+            ClearAllProperties(this);
         }
 
         public ICommand AddNewDocumentCommand { get => MainWindowViewModel.MainWindowHandler.CreateDocumentCommand; }
@@ -47,7 +49,8 @@ namespace Windykator_PRO.ViewModel
             set
             {
                 _SelectedItemOnGrid = value;
-                MainWindowViewModel.MainWindowHandler.DocumentDetailsToShowID = value.Id;
+                if(value != null)
+                    MainWindowViewModel.MainWindowHandler.DocumentDetailsToShowID = value.Id;
             }
         }
 
@@ -89,6 +92,7 @@ namespace Windykator_PRO.ViewModel
 
         }
 
+
         public ICommand ShowDocumentDetailsCommand { get => MainWindowViewModel.MainWindowHandler.DocumentDetailsCommand; }
         protected override void LoadGridData()
         {
@@ -102,6 +106,12 @@ namespace Windykator_PRO.ViewModel
             }).ToList());
         }
 
+
+        protected override void ClearSearchCriteria()
+        {
+            ClearAllProperties(this);
+            LoadGridData();
+        }
         protected override void Search()
         {
             var baseQuery = db.DocumentHeader.Where(row => row.IsEnable);
@@ -126,5 +136,6 @@ namespace Windykator_PRO.ViewModel
                 CreateDate = (DateTime)row.CreateDate
             }).ToList());
         }
+
     }
 }

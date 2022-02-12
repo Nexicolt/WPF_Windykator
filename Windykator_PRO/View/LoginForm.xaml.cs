@@ -19,13 +19,13 @@ namespace Windykator_PRO
 
         public LoginForm()
         {
-            var mainWindow = new MainWindow();
-            mainWindow.DataContext = new MainWindowViewModel();
-            mainWindow.Show();
-            Close();
+            //var mainWindow = new MainWindow();
+            //mainWindow.DataContext = new MainWindowViewModel();
+            //mainWindow.Show();
+            //Close();
 
-            //InitializeComponent();
-            //db = new VindicationDatabase();
+            InitializeComponent();
+            db = new VindicationDatabase();
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -52,12 +52,13 @@ namespace Windykator_PRO
             var userDto = db.User.Where(row => row.Login == login && row.Password == hashedPassword && row.IsEnable).FirstOrDefault();
             if (userDto != null)
             {
+                Application.Current.Resources["User_Login"] = userDto.Login;
+                Application.Current.Resources["User_Id"] = userDto.Id;
                 var mainWindow = new MainWindow();
                 mainWindow.DataContext = new MainWindowViewModel();
                 mainWindow.Show();
                 ErrorPanel.Visibility = Visibility.Collapsed;
-                Application.Current.Resources["User_Login"] = userDto.Login;
-                Application.Current.Resources["User_Id"] = userDto.Id;
+              
                 Close();
             }
             else

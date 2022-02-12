@@ -16,7 +16,18 @@ namespace Windykator_PRO.ViewModel
         public string City { get; set; }
         public string Street { get; set; }
         public int IssuesQuantity { get; set; }
-        public decimal Debt { get; set; }
+
+        private decimal _debt;
+        public decimal? Debt
+        {
+            get => _debt; 
+            set
+            {
+                if(value == null)
+                    value = 0;
+                _debt = (decimal)value;
+            }
+        }
         public string Currency { get; set; }
     }
 
@@ -24,11 +35,11 @@ namespace Windykator_PRO.ViewModel
     {
         private VindicationDatabase db = null;
 
-        public DebtorsViewModel(bool selectButton=false)
+        public DebtorsViewModel(bool selectButton = false)
         {
             this.DisplayName = "Dłużnicy";
             db = new VindicationDatabase();
-            SearchCriteria_IsIndyvidual = true;
+            SearchCriteria_IsIndyvidual = false;
             SelectDebtorButtonVisbility = (!selectButton) ? Visibility.Hidden : Visibility.Visible;
 
         }
@@ -218,6 +229,15 @@ namespace Windykator_PRO.ViewModel
                 Currency = row.Currency,
                 Debt = row.Debt
             }).ToList());
+        }
+        protected override void ClearSearchCriteria()
+        {
+            SearchCriteria_IsIndyvidual = false;
+            SearchCriteria_DuringCourtProcess = false;
+
+            ClearAllProperties(this); //Czyści tylko stringi i combobox'y
+
+            LoadGridData();
         }
     }
 }

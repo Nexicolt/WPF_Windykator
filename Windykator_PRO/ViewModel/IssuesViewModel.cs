@@ -27,6 +27,8 @@ namespace Windykator_PRO.ViewModel
             Messenger.Default.Register<DebtorGridDto>(this, GetDebtorDto);
             db = new VindicationDatabase();
 
+            SearchCriteria_IsCompany = true;
+
             LoadGridData();
         }
 
@@ -81,7 +83,10 @@ namespace Windykator_PRO.ViewModel
             set
             {
                 _SelectedDocumentOnGrid = value;
-                MainWindowViewModel.MainWindowHandler.IssueDetailsToShowId = value.Id;
+                if (value != null)
+                    MainWindowViewModel.MainWindowHandler.IssueDetailsToShowId = value.Id;
+
+                
             }
         }
 
@@ -177,6 +182,23 @@ namespace Windykator_PRO.ViewModel
                 }).ToList()
                 );
             OnPropertyChanged(() => GridList);
+        }
+
+        protected override void ClearSearchCriteria()
+        {
+            SearchCriteria_IsCompany = true;
+            SearchCriteria_IsDuring = false;
+            SearchCriteria_IsFinished = false;
+
+            _selectedCustomer = null;
+            SearchCriteria_Debtor = "";
+            SearchCriteria_Client = "";
+            SearchCriteria_DateFrom = null;
+            SearchCriteria_DateTo = null;
+            _selectedDebtor = null;
+
+            ClearAllProperties(this);
+            LoadGridData();
         }
     }
 }

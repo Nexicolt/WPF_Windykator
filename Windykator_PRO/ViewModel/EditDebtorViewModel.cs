@@ -42,6 +42,11 @@ namespace Windykator_PRO.ViewModel
 
         protected override void Save()
         {
+            if (!IsValid())
+            {
+                ShowErrorMessageBox("Wystapiły błędy w formularzu. Popraw je przed edycją");
+                return;
+            }
             bool customerAlreadyExists = db.Debtor.Where(row => row.Id != DebtorId && row.Name == Name).Count() > 0;
             if (customerAlreadyExists)
             {

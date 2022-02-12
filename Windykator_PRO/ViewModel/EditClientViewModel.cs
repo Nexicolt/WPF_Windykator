@@ -41,8 +41,14 @@ namespace Windykator_PRO.ViewModel
             IsLocalCustomer = customer.IsLocalCustomer;
         }
 
-        protected override void Save()
+        protected  override void Save()
         {
+            if (!IsValid())
+            {
+                ShowErrorMessageBox("Wystapiły błędy w formularzu. Popraw je przed edycją");
+                return;
+            }
+
             bool customerAlreadyExists = db.Customer.Where(row => row.Id != CustomerId && row.Name == Name).Count() > 0;
             if (customerAlreadyExists)
             {
